@@ -4,11 +4,16 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "packages/everyworkflow/*"
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:admin-panel": "turbo run build --filter=admin-panel",
+    "build:front-panel": "turbo run build --filter=front-panel",
     "dev": "turbo run dev --parallel",
+    "dev:admin-panel": "turbo run dev --filter=admin-panel --parallel",
+    "dev:front-panel": "turbo run dev --filter=front-panel --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

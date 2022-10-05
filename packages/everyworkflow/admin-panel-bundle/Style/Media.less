@@ -1,0 +1,21 @@
+.media-gallery-card-col {
+    .media-gallery-card-wrapper {
+        position: relative;
+
+        .media-gallery-card-hover {
+            background: rgba(0, 0, 0, 0.5);
+            transition: opacity 0.3s;
+            justify-content: center;
+            position: absolute;
+            display: none;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        &:hover .media-gallery-card-hover {
+            display: flex;
+        }
+    }
+}

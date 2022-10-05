@@ -1,0 +1,35 @@
+{
+  "name": "@everyworkflow/admin-panel-bundle",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint *.ts*"
+  },
+  "dependencies": {
+    "@everyworkflow/auth-bundle": "*",
+    "@everyworkflow/catalog-category-bundle": "*",
+    "@everyworkflow/catalog-product-bundle": "*",
+    "@everyworkflow/customer-bundle": "*",
+    "@everyworkflow/data-form-bundle": "*",
+    "@everyworkflow/data-grid-bundle": "*",
+    "@everyworkflow/eav-bundle": "*",
+    "@everyworkflow/media-manager-bundle": "*",
+    "@everyworkflow/menu-bundle": "*",
+    "@everyworkflow/page-builder-bundle": "*",
+    "@everyworkflow/page-bundle": "*",
+    "@everyworkflow/panel-bundle": "*",
+    "@everyworkflow/sales-order-bundle": "*",
+    "@everyworkflow/scope-bundle": "*",
+    "@everyworkflow/setting-bundle": "*",
+    "@everyworkflow/static-block-bundle": "*",
+    "@everyworkflow/url-rewrite-bundle": "*",
+    "@everyworkflow/user-bundle": "*",
+    "@types/react-custom-scrollbars": "^4.0.10",
+    "@types/react-timeago": "^4.1.3",
+    "jwt-decode": "^3.1.2",
+    "react-css-theme-switcher": "^0.3.0",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-router-dom": "^6.4.1",
+    "react-timeago": "^7.1.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@everyworkflow/front-panel-bundle",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint *.ts*"
+  },
+  "dependencies": {
+    "@everyworkflow/admin-panel-bundle": "*"
+  }
+}

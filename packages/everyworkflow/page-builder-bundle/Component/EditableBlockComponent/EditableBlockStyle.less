@@ -1,0 +1,73 @@
+/*!
+ * @copyright EveryWorkflow. All rights reserved.
+ */
+
+.page-builder-debug-box {
+  border: dashed 1px #B0413E;
+  //border: dashed 1px #B0413E;
+  padding: 24px;
+  position: relative;
+  //padding: 0 2px;
+  //margin: -1px;
+  //padding: 1px;
+  //width: calc(100% + 2px);
+
+  .page-builder-block-title {
+    position: absolute;
+    top: -14px;
+    left: 24px;
+    background-color: #eeeeee;
+    border: dashed 1px #B0413E;
+    //border: solid 1px #dddddd;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 11px;
+    cursor: move;
+    text-transform: capitalize;
+    z-index: 1;
+
+    &.drag-able {
+      &:hover,
+      &:focus {
+        z-index: 100;
+      }
+    }
+  }
+
+  .page-builder-block-actions {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    display: none;
+    padding: 16px 8px;
+    z-index: 1;
+
+    &:hover {
+      z-index: 100;
+    }
+
+    .addition-item {
+      display: none;
+    }
+  }
+
+  .page-builder-add-block-wrapper {
+    text-align: center;
+    margin-top: 24px;
+  }
+}
+
+.page-builder-debug-box:hover > .page-builder-block-actions {
+  display: flex;
+}
+
+.page-builder-debug-box:hover > .page-builder-block-actions:hover .addition-item {
+  display: inline;
+}
+
+.flip-icon {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}

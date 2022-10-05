@@ -1,0 +1,13 @@
+{
+  "name": "@everyworkflow/media-manager-bundle",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint *.ts*"
+  },
+  "dependencies": {
+    "@everyworkflow/panel-bundle": "*",
+    "react-sortablejs": "^6.1.4",
+    "sortablejs": "^1.15.0"
+  }
+}

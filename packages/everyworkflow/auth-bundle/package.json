@@ -1,0 +1,12 @@
+{
+  "name": "@everyworkflow/auth-bundle",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint *.ts*"
+  },
+  "dependencies": {
+    "@everyworkflow/panel-bundle": "*",
+    "react-router-dom": "^6.4.1"
+  }
+}
