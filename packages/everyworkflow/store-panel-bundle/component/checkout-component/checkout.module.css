@@ -1,0 +1,27 @@
+.checkoutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  overflow: scroll;
+}
+
+.card {
+  margin: 20px 0px 20px 0px;
+}
+
+.paymentDetailContainer {
+  background-color: rgba(249, 250, 251, 255);
+  padding: 35px;
+}
+.paymentMethodContainer {
+  padding: 35px;
+}
+
+.paymentMethodCardContainer {
+  background-color: rgba(249, 250, 251, 255);
+  border-radius: 6px;
+  padding: 5px 5px 5px 15px;
+  width: 100%;
+}

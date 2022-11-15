@@ -6,6 +6,7 @@
     "lint": "eslint *.ts*"
   },
   "dependencies": {
-    "@everyworkflow/admin-panel-bundle": "*"
+    "@everyworkflow/admin-panel-bundle": "*",
+    "react-css-theme-switcher": "^0.3.0"
   }
 }

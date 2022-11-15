@@ -6,8 +6,9 @@
     "lint": "eslint *.ts*"
   },
   "dependencies": {
-    "@everyworkflow/panel-bundle": "*",
     "@everyworkflow/data-form-bundle": "*",
-    "@everyworkflow/data-grid-bundle": "*"
+    "@everyworkflow/data-grid-bundle": "*",
+    "@everyworkflow/panel-bundle": "*",
+    "react-sticky-box": "^1.0.2"
   }
 }

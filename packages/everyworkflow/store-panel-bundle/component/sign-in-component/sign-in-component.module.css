@@ -1,0 +1,9 @@
+.signinContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  overflow: scroll;
+  padding: 20px 0px 20px 0px;
+}

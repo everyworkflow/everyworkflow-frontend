@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@everyworkflow/panel-bundle/config/panel-config": [
+                "./../../packages/everyworkflow/next-panel-bundle/config/panel-config"
+            ],
+            "@everyworkflow/data-form-bundle/root/data-form-field-maps": [
+                "./../../packages/everyworkflow/next-panel-bundle/root/data-form-field-maps"
+            ],
+            "react-router-dom": [
+                "./../../packages/everyworkflow/next-panel-bundle/overwrite/react-router-dom"
+            ]
+        }
+    },
+    "extends": "tsconfig/nextjs.json",
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

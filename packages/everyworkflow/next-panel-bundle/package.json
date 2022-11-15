@@ -1,0 +1,14 @@
+{
+  "name": "@everyworkflow/next-panel-bundle",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint *.ts*"
+  },
+  "dependencies": {
+    "@everyworkflow/panel-bundle": "*",
+    "@everyworkflow/page-builder-bundle": "*",
+    "@everyworkflow/data-form-bundle": "*",
+    "@everyworkflow/data-grid-bundle": "*"
+  }
+}

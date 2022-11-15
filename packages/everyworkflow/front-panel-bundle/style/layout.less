@@ -1,0 +1,40 @@
+@import '../../admin-panel-bundle/style/layout.less';
+
+.app-frontend-header {
+    border-bottom: solid 1px @border-color-split;
+    background-color: @component-background;
+    position: sticky;
+    line-height: 3;
+    height: 55px;
+    margin: auto;
+    width: 100%;
+    padding: 0;
+    z-index: 2;
+    top: 0;
+
+    .brand-home {
+        padding: 4px 0;
+        display: block;
+        margin: 3px 0;
+
+        img {
+            display: block;
+            height: 40px;
+        }
+    }
+
+    .ant-menu {
+        border: none;
+        margin: 6px 0;
+
+        .ant-menu-submenu {
+            a {
+                color: @text-color;
+
+                &:hover {
+                    color: @primary-color;
+                }
+            }
+        }
+    }
+}

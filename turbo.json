@@ -8,6 +8,18 @@
     "lint": {
       "outputs": []
     },
+    "build:style": {
+      "outputs": []
+    },
+    "build:style:dark": {
+      "outputs": []
+    },
+    "dev:style": {
+      "outputs": []
+    },
+    "dev:style:dark": {
+      "outputs": []
+    },
     "dev": {
       "cache": false
     }

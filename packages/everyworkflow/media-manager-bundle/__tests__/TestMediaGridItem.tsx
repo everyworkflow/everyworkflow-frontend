@@ -2,9 +2,8 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import React from 'react';
 import {cleanup, fireEvent, render} from '@testing-library/react';
-import MediaGridItem from '@everyworkflow/media-manager-bundle/Component/MediaGridItem';
+import MediaGridItem from '../component/media-grid-item';
 
 afterEach(cleanup);
 
