@@ -14,10 +14,6 @@
     "dev": "turbo run dev --parallel",
     "dev:admin-panel": "turbo run dev --filter=admin-panel --parallel",
     "dev:front-panel": "turbo run dev --filter=front-panel --parallel",
-    "dev:style": "turbo run dev:style --parallel",
-    "dev:style:dark": "turbo run dev:style:dark --parallel",
-    "build:style": "turbo run build:style --parallel",
-    "build:style:dark": "turbo run build:style:dark --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

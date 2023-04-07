@@ -6,11 +6,7 @@
     "scripts": {
         "dev": "vite --host=0.0.0.0",
         "build": "tsc && vite build",
-        "preview": "vite preview",
-        "dev:style": "npx @emeks/antd-custom-theme-generator --antd=./../../node_modules/antd ./style.less ./public/dist/css/style.css --watch",
-        "dev:style:dark": "npx @emeks/antd-custom-theme-generator --antd=./../../node_modules/antd --theme=dark ./style.less ./public/dist/css/style.dark.css --watch",
-        "build:style": "npx @emeks/antd-custom-theme-generator --antd=./../../node_modules/antd ./style.less ./public/dist/css/style.css",
-        "build:style:dark": "npx @emeks/antd-custom-theme-generator --antd=./../../node_modules/antd --theme=dark ./style.less ./public/dist/css/style.dark.css"
+        "preview": "vite preview"
     },
     "dependencies": {
         "@everyworkflow/admin-panel-bundle": "*",

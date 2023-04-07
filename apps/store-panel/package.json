@@ -6,11 +6,7 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
-        "dev:style": "npx @emeks/antd-custom-theme-generator --antd=./../../node_modules/antd ./style.less ./public/dist/css/style.css --watch",
-        "dev:style:dark": "npx @emeks/antd-custom-theme-generator --antd=./../../node_modules/antd --theme=dark ./style.less ./public/dist/css/style.dark.css --watch",
-        "build:style": "npx @emeks/antd-custom-theme-generator --antd=./../../node_modules/antd ./style.less ./public/dist/css/style.css",
-        "build:style:dark": "npx @emeks/antd-custom-theme-generator --antd=./../../node_modules/antd --theme=dark ./style.less ./public/dist/css/style.dark.css"
+        "lint": "next lint"
     },
     "dependencies": {
         "@everyworkflow/catalog-product-bundle": "*",
