@@ -12,6 +12,8 @@ interface ImageBlockInterface extends BlockInterface {
     width?: number | string;
     preview?: boolean;
     image?: SelectedMediaItemInterface,
+    use_image_dark?: boolean;
+    image_dark?: SelectedMediaItemInterface,
 }
 
 export default ImageBlockInterface;

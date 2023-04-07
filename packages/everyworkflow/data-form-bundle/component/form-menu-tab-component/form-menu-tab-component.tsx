@@ -3,7 +3,7 @@
  */
 
 import { useCallback } from 'react';
-import Tabs from 'antd/lib/tabs';
+import { Tabs } from 'antd';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 interface FormMenuTabItem {

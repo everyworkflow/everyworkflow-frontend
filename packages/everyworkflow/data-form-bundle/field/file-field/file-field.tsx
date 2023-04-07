@@ -3,9 +3,7 @@
  */
 
 import { useContext, useCallback } from 'react';
-import Button from 'antd/lib/button';
-import Form from 'antd/lib/form';
-import Upload from 'antd/lib/upload';
+import { Form, Button, Upload } from 'antd';
 import UploadOutlined from '@ant-design/icons/UploadOutlined';
 import FileFieldInterface from '@everyworkflow/data-form-bundle/model/field/file-field-interface';
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";

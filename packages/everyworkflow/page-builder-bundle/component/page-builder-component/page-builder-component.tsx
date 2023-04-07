@@ -72,16 +72,22 @@ const PageBuilderComponent = ({ pageBuilderData, mode = MODE_VIEW, children, onC
         });
     }, [pageBuilderData, mode]);
 
-    const renderContent = () => (
-        <>
-            {state.block_data.map((block: BlockInterface, index: number) => (
-                <React.Fragment key={index}>
-                    {state.mode === MODE_EDIT && <DropBlockComponent indexes={[index]} />}
-                    <RenderBlockComponent indexes={[index]} blockData={block} mode={mode} />
-                </React.Fragment>
-            ))}
-        </>
-    )
+    const renderContent = () => {
+        try {
+            return (
+                <>
+                    {state.block_data.map((block: BlockInterface, index: number) => (
+                        <React.Fragment key={index}>
+                            {state.mode === MODE_EDIT && <DropBlockComponent indexes={[index]} />}
+                            <RenderBlockComponent indexes={[index]} blockData={block} mode={mode} />
+                        </React.Fragment>
+                    ))}
+                    </>
+            );
+        } catch (error: any) {
+            return null;
+        }
+    }
 
     return (
         <PageBuilderContext.Provider

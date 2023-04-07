@@ -3,7 +3,7 @@
  */
 
 import { useCallback, useState, useEffect } from 'react';
-import Menu from "antd/lib/menu";
+import { Menu } from "antd";
 import { Link } from 'react-router-dom';
 import Remote from '@everyworkflow/panel-bundle/service/remote';
 

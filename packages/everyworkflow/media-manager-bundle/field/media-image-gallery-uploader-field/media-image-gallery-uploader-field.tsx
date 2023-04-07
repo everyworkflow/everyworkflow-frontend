@@ -3,15 +3,9 @@
  */
 
 import { forwardRef, useCallback, useContext, useState, useEffect } from 'react';
-import Form from 'antd/lib/form';
-import Button from 'antd/lib/button';
-import Image from 'antd/lib/image';
-import UploadOutlined from '@ant-design/icons/UploadOutlined';
 import { ReactSortable } from 'react-sortablejs';
-import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
-import Tooltip from 'antd/lib/tooltip';
-import Space from 'antd/lib/space';
+import { Row, Col, Form, Image, Button, Tooltip, Space } from 'antd';
+import UploadOutlined from '@ant-design/icons/UploadOutlined';
 import DeleteOutlined from '@ant-design/icons/DeleteOutlined';
 import EyeOutlined from '@ant-design/icons/EyeOutlined';
 import SettingOutlined from '@ant-design/icons/SettingOutlined';

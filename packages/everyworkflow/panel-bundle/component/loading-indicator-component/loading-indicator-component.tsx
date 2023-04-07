@@ -2,7 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Spin from "antd/lib/spin";
+import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 
 const LoadingIndicatorComponent = () => {

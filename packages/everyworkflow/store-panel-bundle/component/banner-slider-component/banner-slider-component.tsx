@@ -3,9 +3,8 @@
  */
 
 import { createRef } from 'react';
-import Carousel, { CarouselRef } from 'antd/lib/carousel';
-import Image from 'antd/lib/image';
-import Button from 'antd/lib/button';
+import { Carousel, Button, Image } from 'antd';
+import { CarouselRef } from 'antd/lib/carousel';
 import LeftOutlined from '@ant-design/icons/LeftOutlined';
 import RightOutlined from '@ant-design/icons/RightOutlined';
 

@@ -2,7 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Layout from "antd/lib/layout";
+import { Layout } from "antd";
 import HeaderComponent from "@everyworkflow/store-panel-bundle/component/header-component";
 import FooterComponent from "@everyworkflow/store-panel-bundle/component/footer-component";
 

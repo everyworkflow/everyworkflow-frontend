@@ -3,9 +3,7 @@
  */
 
 import { useState } from 'react';
-import Form from 'antd/lib/form';
-import Input from 'antd/lib/input';
-import Image from 'antd/lib/image';
+import { Form, Input, Image } from 'antd';
 import SidePanelComponent, {
     PANEL_SIZE_MEDIUM,
 } from '@everyworkflow/panel-bundle/component/side-panel-component/side-panel-component';

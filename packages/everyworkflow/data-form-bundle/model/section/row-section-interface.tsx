@@ -3,7 +3,7 @@
  */
 
 import BaseSectionInterface from "@everyworkflow/data-form-bundle/model/section/base-section-interface";
-import { RowProps } from "antd/lib/grid/row";
+import { RowProps } from "antd";
 
 interface RowSectionInterface extends BaseSectionInterface, RowProps {
 

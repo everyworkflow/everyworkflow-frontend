@@ -3,11 +3,10 @@
  */
 
 import { useContext } from 'react';
+import { Form, Input } from 'antd';
 import CardSectionInterface from "@everyworkflow/data-form-bundle/model/section/card-section-interface";
 import AttributeValueOptionsComponent from "@everyworkflow/eav-bundle/component/attribute-value-options-component";
 import FormContext from '@everyworkflow/data-form-bundle/context/form-context';
-import Form from 'antd/lib/form';
-import Input from 'antd/lib/input';
 
 interface OptionsFormSectionProps {
     sectionData: CardSectionInterface;

@@ -2,7 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Upload from 'antd/lib/upload';
+import { Upload } from 'antd';
 import InboxOutlined from '@ant-design/icons/InboxOutlined';
 import UrlHelper from '@everyworkflow/panel-bundle/helper/url-helper';
 import AlertAction, { ALERT_TYPE_ERROR, ALERT_TYPE_SUCCESS } from '@everyworkflow/panel-bundle/action/alert-action';

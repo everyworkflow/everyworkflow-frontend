@@ -3,10 +3,7 @@
  */
 
 import { useState } from 'react';
-import Space from 'antd/lib/space';
-import Card from 'antd/lib/card';
-import Button from 'antd/lib/button';
-import Popconfirm from 'antd/lib/popconfirm';
+import { Card, Button, Popconfirm, Space } from 'antd';
 import AttributeValueOptionsTable from '@everyworkflow/eav-bundle/component/attribute-value-options-component/attribute-value-options-table';
 import SidePanelComponent from '@everyworkflow/panel-bundle/component/side-panel-component';
 import { PANEL_SIZE_MEDIUM } from '@everyworkflow/panel-bundle/component/side-panel-component/side-panel-component';

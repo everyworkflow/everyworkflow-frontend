@@ -3,8 +3,7 @@
  */
 
 import { useContext } from 'react';
-import Space from 'antd/lib/space';
-import Image from 'antd/lib/image';
+import { Space, Image } from 'antd';
 import ProductDetailContext from '@everyworkflow/catalog-product-bundle/context/product-detail-context';
 
 const ProductGalleryComponent = () => {

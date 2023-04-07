@@ -2,7 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Card from 'antd/lib/card';
+import { Card } from 'antd';
 import CardSectionInterface from "@everyworkflow/data-form-bundle/model/section/card-section-interface";
 import FieldRenderComponent from "@everyworkflow/data-form-bundle/component/field-render-component";
 import SectionRenderComponent from "@everyworkflow/data-form-bundle/component/section-render-component";

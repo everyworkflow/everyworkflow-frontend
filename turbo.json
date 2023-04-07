@@ -9,15 +9,19 @@
       "outputs": []
     },
     "build:style": {
+      "cache": false,
       "outputs": []
     },
     "build:style:dark": {
+      "cache": false,
       "outputs": []
     },
     "dev:style": {
+      "cache": false,
       "outputs": []
     },
     "dev:style:dark": {
+      "cache": false,
       "outputs": []
     },
     "dev": {

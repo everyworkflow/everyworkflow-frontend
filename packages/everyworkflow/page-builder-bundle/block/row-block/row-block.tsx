@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import Row from "antd/lib/row";
+import { Row } from "antd";
 import StyleHelper from "@everyworkflow/panel-bundle/helper/style-helper";
 import RenderBlockComponent from "@everyworkflow/page-builder-bundle/component/render-block-component";
 import RowBlockInterface from "@everyworkflow/page-builder-bundle/model/block/row-block-interface";

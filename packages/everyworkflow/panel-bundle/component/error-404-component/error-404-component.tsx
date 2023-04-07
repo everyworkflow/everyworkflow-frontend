@@ -3,8 +3,7 @@
  */
 
 import { Link } from 'react-router-dom';
-import Result from "antd/lib/result";
-import Button from "antd/lib/button";
+import { Result, Button } from "antd";
 
 const Error404Component = () => {
     return (

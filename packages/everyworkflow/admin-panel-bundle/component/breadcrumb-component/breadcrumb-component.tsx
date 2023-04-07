@@ -4,7 +4,7 @@
 
 import { useCallback, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
-import Breadcrumb from 'antd/lib/breadcrumb';
+import { Breadcrumb } from 'antd';
 import { NavLink } from 'react-router-dom';
 import AdminPanelContext from '@everyworkflow/admin-panel-bundle/context/admin-panel-context';
 import SidebarItemInterface from '@everyworkflow/admin-panel-bundle/model/sidebar/sidebar-item-interface';

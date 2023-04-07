@@ -3,14 +3,7 @@
  */
 
 import { useContext, useEffect } from "react";
-import Checkbox from "antd/lib/checkbox";
-import Divider from "antd/lib/divider";
-import Menu from "antd/lib/menu";
-import Radio from "antd/lib/radio";
-import Row from "antd/lib/row";
-import Slider from "antd/lib/slider";
-import Space from "antd/lib/space";
-import Typography from "antd/lib/typography";
+import { Row, Slider, Space, Menu, Divider, Radio, Checkbox, Typography } from "antd";
 import { ProductListContext } from "@everyworkflow/catalog-product-bundle/context/product-list-context";
 import {
     ACTION_SET_PRODUCT_DATA,

@@ -18,13 +18,13 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@emotion/css": "^11.10.0",
-    "@types/lodash": "^4.14.186",
     "@types/react-color": "^3.0.6",
     "@types/react-highlight-words": "^0.16.4",
     "ahooks": "^3.7.1",
-    "antd": "^4.23.3",
+    "antd": "^5.0",
     "idb": "^7.1.0",
     "jwt-decode": "^3.1.2",
+    "moment": "^2.29.4",
     "react-highlight-words": "^0.18.0",
     "react-router-dom": "^6.4.1"
   }

@@ -3,8 +3,8 @@
  */
 
 import { useContext, useEffect, useState } from 'react';
+import { theme, Form } from 'antd';
 import { useNavigate, useParams } from 'react-router-dom';
-import Form from 'antd/lib/form';
 import PanelContext from "@everyworkflow/panel-bundle/context/panel-context";
 import { ACTION_SET_PAGE_TITLE } from "@everyworkflow/panel-bundle/reducer/panel-reducer";
 import Remote from "@everyworkflow/panel-bundle/service/remote";
@@ -47,6 +47,7 @@ const DataFormPageComponent = ({
     formFieldMaps,
     formContent
 }: DataFormPageComponentProps) => {
+    const { token } = theme.useToken();
     const { dispatch: panelDispatch } = useContext(PanelContext);
     const urlParams: any = useParams();
     const [form] = Form.useForm();
@@ -159,17 +160,21 @@ const DataFormPageComponent = ({
             <BreadcrumbComponent />
             {childrenBefore}
             {remoteData && (
-                <DataFormComponent
-                    form={form}
-                    initialValues={remoteData.item}
-                    formErrors={formErrors}
-                    formData={remoteData.data_form}
-                    formType={FORM_TYPE_HORIZONTAL}
-                    onSubmit={onSubmit}
-                    formSectionMaps={formSectionMaps}
-                    formFieldMaps={formFieldMaps}
-                    formContent={formContent}
-                />
+                <div style={{
+                    padding: token.paddingContentHorizontalLG,
+                }}>
+                    <DataFormComponent
+                        form={form}
+                        initialValues={remoteData.item}
+                        formErrors={formErrors}
+                        formData={remoteData.data_form}
+                        formType={FORM_TYPE_HORIZONTAL}
+                        onSubmit={onSubmit}
+                        formSectionMaps={formSectionMaps}
+                        formFieldMaps={formFieldMaps}
+                        formContent={formContent}
+                    />
+                </div>
             )}
             {childrenAfter}
         </>

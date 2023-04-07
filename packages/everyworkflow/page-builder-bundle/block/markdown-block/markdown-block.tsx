@@ -2,7 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Typography from "antd/lib/typography";
+import { Typography } from "antd";
 import Markdown from "markdown-to-jsx";
 import StyleHelper from "@everyworkflow/panel-bundle/helper/style-helper";
 import ParagraphBlockInterface from "@everyworkflow/page-builder-bundle/model/block/paragraph-block-interface";
@@ -19,7 +19,6 @@ interface WithChildren {
 }
 
 const MarkdownBlock = ({ indexes, blockData, mode }: ParagraphBlockProps) => {
-
     const OlWrapRenderComponent = ({ children }: WithChildren): React.ReactElement => (
         <Typography.Paragraph>
             <ol>{children}</ol>

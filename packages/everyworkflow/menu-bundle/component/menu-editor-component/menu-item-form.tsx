@@ -3,11 +3,7 @@
  */
 
 import { useEffect } from 'react';
-import Form from 'antd/lib/form';
-import Card from 'antd/lib/card';
-import Button from 'antd/lib/button';
-import Space from 'antd/lib/space';
-import Popconfirm from 'antd/lib/popconfirm';
+import { Form, Card, Button, Space, Popconfirm } from 'antd';
 import DataFormInterface from "@everyworkflow/data-form-bundle/model/data-form-interface";
 import DataFormComponent from "@everyworkflow/data-form-bundle/component/data-form-component";
 import { FORM_TYPE_HORIZONTAL } from "@everyworkflow/data-form-bundle/component/data-form-component/data-form-component";

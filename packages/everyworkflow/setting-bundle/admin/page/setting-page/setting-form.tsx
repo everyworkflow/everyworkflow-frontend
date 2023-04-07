@@ -3,7 +3,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import Form from 'antd/lib/form';
+import { Form } from 'antd';
 import Remote from "@everyworkflow/panel-bundle/service/remote";
 import PageHeaderComponent from "@everyworkflow/admin-panel-bundle/component/page-header-component";
 import DataFormComponent from "@everyworkflow/data-form-bundle/component/data-form-component";

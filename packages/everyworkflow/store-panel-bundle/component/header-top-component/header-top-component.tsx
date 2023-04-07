@@ -2,8 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Button from 'antd/lib/button';
-import Space from 'antd/lib/space';
+import { Button, Space } from 'antd';
 import ThemeSwitcherComponent from '@everyworkflow/store-panel-bundle/component/theme-switcher-component';
 
 const HeaderTopComponent = () => {

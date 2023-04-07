@@ -2,11 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Card from "antd/lib/card";
-import Table from "antd/lib/table";
-import Image from "antd/lib/image";
-import Typography from "antd/lib/typography";
-import Button from "antd/lib/button";
+import { Table, Card, Image, Typography } from "antd";
 import { ColumnsType } from "antd/lib/table";
 import {
     CloseOutlined,

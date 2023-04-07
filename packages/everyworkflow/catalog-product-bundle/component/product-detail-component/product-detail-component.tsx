@@ -3,10 +3,9 @@
  */
 
 import { useReducer } from "react";
-import Col from "antd/lib/col";
-import Row from "antd/lib/row";
-import ProductGalleryComponent from "@everyworkflow/catalog-product-bundle/component/product-gallery-component";
+import { Row, Col } from "antd";
 import StickyBox from "react-sticky-box";
+import ProductGalleryComponent from "@everyworkflow/catalog-product-bundle/component/product-gallery-component";
 import ProductDetailMainComponent from "@everyworkflow/catalog-product-bundle/component/product-detail-main-component";
 import ProductDetailReducer from "@everyworkflow/catalog-product-bundle/reducer/product-detail-reducer";
 import { productDetailState } from "@everyworkflow/catalog-product-bundle/state/product-detail-state";

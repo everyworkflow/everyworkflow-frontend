@@ -3,8 +3,7 @@
  */
 
 import { Suspense, useCallback, useEffect, useReducer } from "react";
-import { ColProps } from "antd/lib/col";
-import Form, { FormInstance } from "antd/lib/form";
+import { Form, FormInstance, ColProps } from 'antd';
 import { FormLabelAlign } from "antd/lib/form/interface";
 import moment from "moment";
 import DataFormInterface from "@everyworkflow/data-form-bundle/model/data-form-interface";

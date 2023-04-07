@@ -3,8 +3,7 @@
  */
 
 import { useCallback, useContext, useEffect, useState, lazy } from 'react';
-import Form from 'antd/lib/form';
-import Card from 'antd/lib/card';
+import { Form, Card } from 'antd';
 import Remote from "@everyworkflow/panel-bundle/service/remote";
 import PanelContext from '@everyworkflow/panel-bundle/context/panel-context';
 import { ACTION_SET_PAGE_TITLE } from '@everyworkflow/panel-bundle/reducer/panel-reducer';

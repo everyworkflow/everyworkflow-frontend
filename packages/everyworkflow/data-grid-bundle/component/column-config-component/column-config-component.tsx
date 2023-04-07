@@ -3,8 +3,7 @@
  */
 
 import { useCallback, useContext } from 'react';
-import Button from 'antd/lib/button';
-import Form from 'antd/lib/form';
+import { Form, Button } from 'antd';
 import SidePanelComponent from '@everyworkflow/panel-bundle/component/side-panel-component';
 import { PANEL_SIZE_SMALL } from '@everyworkflow/panel-bundle/component/side-panel-component/side-panel-component';
 import DataForm from '@everyworkflow/data-form-bundle/component/data-form-component';

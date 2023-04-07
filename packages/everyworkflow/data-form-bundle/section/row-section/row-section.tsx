@@ -2,7 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Row from 'antd/lib/row';
+import { Row } from 'antd';
 import RowSectionInterface from "@everyworkflow/data-form-bundle/model/section/row-section-interface";
 import FieldRenderComponent from "@everyworkflow/data-form-bundle/component/field-render-component";
 import SectionRenderComponent from "@everyworkflow/data-form-bundle/component/section-render-component";

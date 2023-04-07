@@ -3,7 +3,7 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
-import Menu from 'antd/lib/menu';
+import { theme, Menu } from 'antd';
 import { NavLink } from 'react-router-dom';
 import Remote from "@everyworkflow/panel-bundle/service/remote";
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -11,6 +11,7 @@ import AlertAction, { ALERT_TYPE_ERROR } from "@everyworkflow/panel-bundle/actio
 import HtmlRawComponent from '@everyworkflow/panel-bundle/component/html-raw-component';
 
 const SettingSidebar = () => {
+    const { token } = theme.useToken();
     const [menuData, setmenuData] = useState<Array<any>>();
     const code = 'general-setting';
 
@@ -72,7 +73,7 @@ const SettingSidebar = () => {
     }
 
     const getSelectedKeys = useCallback(() => {
-        const name = code.toString().replaceAll('-', '.');
+        const name = code?.toString()?.replaceAll('-', '.');
         return [name];
     }, [code]);
 
@@ -140,9 +141,16 @@ const SettingSidebar = () => {
     }, [menuData]);
 
     return (
-        <div className="sidebar-panel">
+        <div className="sidebar-panel" style={{ width: 256 }}>
             <div className="sidebar-wrapper">
-                <Scrollbars autoHide={true} style={{ height: 'calc(100vh - 56px)' }}>
+                <Scrollbars
+                    autoHide={true}
+                    style={{
+                        width: 256,
+                        height: 'calc(100vh - 64px)',
+                        backgroundColor: token.colorBgBase,
+                        position: 'fixed', top: 64
+                    }}>
                     {menuData && Array.isArray(menuData) && (
                         <Menu
                             className="app-menu-active-left-side"

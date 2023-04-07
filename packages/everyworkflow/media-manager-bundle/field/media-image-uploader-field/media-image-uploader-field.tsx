@@ -3,10 +3,7 @@
  */
 
 import { useContext, useState, useEffect } from 'react';
-import Form from 'antd/lib/form';
-import Button from 'antd/lib/button';
-import Image from 'antd/lib/image';
-import Upload from 'antd/lib/upload';
+import { Form, Button, Image, Upload } from 'antd';
 import UploadOutlined from '@ant-design/icons/UploadOutlined';
 import MediaImageUploaderFieldInterface
     from '@everyworkflow/media-manager-bundle/model/field/media-image-uploader-field-interface';
@@ -25,8 +22,10 @@ const MediaImageUploaderField = ({ fieldData, children }: MediaImageUploaderFiel
     const { state: formState } = useContext(FormContext);
     const [selectedMediaPath, setSelectedMediaPath] = useState<string | undefined>(((): string | undefined => {
         if (fieldData.name && formState.initial_values[fieldData.name]) {
-            if (formState.initial_values[fieldData.name] === 'string') {
+            if (typeof formState.initial_values[fieldData.name] === 'string') {
                 return formState.initial_values[fieldData.name];
+            } else if (typeof formState.initial_values[fieldData.name]?.path_name === 'string') {
+                return formState.initial_values[fieldData.name]?.path_name;
             }
         }
         return undefined;

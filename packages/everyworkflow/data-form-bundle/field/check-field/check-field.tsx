@@ -3,8 +3,8 @@
  */
 
 import { useContext, useState, useCallback } from 'react';
-import Form from 'antd/lib/form';
-import Checkbox, { CheckboxChangeEvent } from 'antd/lib/checkbox';
+import { Form, Checkbox } from 'antd';
+import { CheckboxChangeEvent } from 'antd/lib/checkbox';
 import CheckFieldInterface from '@everyworkflow/data-form-bundle/model/field/check-field-interface';
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";
 import FormContext from '@everyworkflow/data-form-bundle/context/form-context';

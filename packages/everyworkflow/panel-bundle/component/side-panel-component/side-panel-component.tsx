@@ -3,7 +3,7 @@
  */
 
 import { useState } from 'react';
-import Drawer from 'antd/lib/drawer';
+import { Drawer } from 'antd';
 import { useResponsive } from "ahooks";
 import { Scrollbars } from 'react-custom-scrollbars';
 

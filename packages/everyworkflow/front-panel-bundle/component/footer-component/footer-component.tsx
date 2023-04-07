@@ -2,11 +2,11 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import { Footer } from "antd/lib/layout/layout";
+import { Layout } from "antd";
 
 const FooterComponent = () => {
     return (
-        <Footer style={{ textAlign: 'center' }}>Copyright © EveryWorkflow. All rights reserved.</Footer>
+        <Layout.Footer style={{ textAlign: 'center' }}>Copyright © EveryWorkflow. All rights reserved.</Layout.Footer>
     );
 }
 

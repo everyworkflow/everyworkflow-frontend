@@ -3,7 +3,7 @@
  */
 
 import { useRef, useContext, useEffect, useState } from 'react';
-import Card from "antd/lib/card";
+import { Card } from "antd";
 import { useDrag, useDrop } from "ahooks";
 import PanelContext from "@everyworkflow/panel-bundle/context/panel-context";
 import { ACTION_SET_PAGE_TITLE } from "@everyworkflow/panel-bundle/reducer/panel-reducer";

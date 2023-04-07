@@ -3,8 +3,7 @@
  */
 
 import { useContext, useCallback } from 'react';
-import Form from 'antd/lib/form';
-import TimePicker from 'antd/lib/time-picker';
+import { Form, TimePicker } from 'antd';
 import moment from 'moment';
 import TimePickerFieldInterface from "@everyworkflow/data-form-bundle/model/field/time-picker-field-interface";
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";
@@ -25,7 +24,7 @@ const TimePickerField = ({ fieldData, onChange, children }: TimePickerFieldProps
         return undefined;
     }, [fieldData, formState.form_errors]);
 
-    const handleChange = (value: any, dateString: string) => {
+    const handleChange = (_: any, dateString: string) => {
         if (onChange) {
             onChange(dateString);
         }

@@ -3,14 +3,8 @@
  */
 
 import { useContext, CSSProperties, useCallback } from 'react';
+import { theme, Layout, Row, Col, Menu, Dropdown, Button, Space } from 'antd';
 import type { MenuProps } from 'antd';
-import Layout from 'antd/lib/layout';
-import Button from 'antd/lib/button';
-import Space from 'antd/lib/space';
-import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
-import Menu from 'antd/lib/menu';
-import Dropdown from 'antd/lib/dropdown';
 import DownOutlined from '@ant-design/icons/DownOutlined';
 import ButtonInterface from "@everyworkflow/panel-bundle/model/button-interface";
 import ButtonHeaderAction from '@everyworkflow/data-grid-bundle/header-action/button-header-action';
@@ -29,6 +23,7 @@ interface PageHeaderComponentProps {
     right?: JSX.Element | JSX.Element[];
     isSticky?: boolean;
     style?: CSSProperties;
+    headerStyle?: CSSProperties;
 }
 
 const PageHeaderComponent = ({
@@ -38,8 +33,10 @@ const PageHeaderComponent = ({
     left,
     right,
     isSticky = true,
-    style
+    style,
+    headerStyle
 }: PageHeaderComponentProps) => {
+    const { token } = theme.useToken();
     const { state: panelState } = useContext(PanelContext);
 
     const getHeaderDropDownItems = useCallback(() => {
@@ -56,12 +53,21 @@ const PageHeaderComponent = ({
     return (
         <>
             <div
-                className="app-sticky-page-header-panel"
                 style={{
-                    ...style,
+                    backgroundColor: token.colorBgBase,
                     position: isSticky ? 'sticky' : 'initial',
+                    boxShadow: token.boxShadow,
+                    zIndex: 1,
+                    top: 0,
+                    ...style,
                 }}>
-                <Layout.Header>
+                <Layout.Header style={{
+                    backgroundColor: token.colorBgBase,
+                    zIndex: 5,
+                    paddingLeft: token.paddingContentHorizontalLG,
+                    paddingRight: token.paddingContentHorizontalLG,
+                    ...headerStyle,
+                }}>
                     <Row align="middle" style={{ height: 'inherit' }}>
                         {title && (<Col span={12}>{title}{left}</Col>)}
                         {right && (

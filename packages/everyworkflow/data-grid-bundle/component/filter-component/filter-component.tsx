@@ -3,10 +3,7 @@
  */
 
 import { useCallback, useContext } from 'react';
-import Space from 'antd/lib/space';
-import Card from 'antd/lib/card';
-import Button from 'antd/lib/button';
-import Form from 'antd/lib/form';
+import { Form, Card, Button, Space } from 'antd';
 import { useLocation, useNavigate } from "react-router-dom";
 import DataFormComponent from '@everyworkflow/data-form-bundle/component/data-form-component';
 import DataGridContext, { PANEL_ACTIVE_FILTERS } from '@everyworkflow/data-grid-bundle/context/data-grid-context';

@@ -3,10 +3,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import Tree from 'antd/lib/tree';
-import Dropdown from 'antd/lib/dropdown';
-import Menu from 'antd/lib/menu';
-import Popconfirm from 'antd/lib/popconfirm';
+import { Tree, Dropdown, Menu, Popconfirm } from 'antd';
 
 interface MenuItemSidebarProps {
     menuData?: Array<any>;
@@ -42,9 +39,9 @@ const MenuItemSidebar = ({
     }, [menuData]);
 
     return (
-        <div className="tree-sidebar tree-sidebar-inline" style={{ position: 'absolute', minHeight: 'calc(100vh - 100px)' }}>
+        <div className="tree-sidebar tree-sidebar-inline">
             <Tree
-                onClick={(e: React.MouseEvent, node: any) => {
+                onClick={(_, node: any) => {
                     if (onMenuItemTreeClick) {
                         onMenuItemTreeClick(node)
                     }

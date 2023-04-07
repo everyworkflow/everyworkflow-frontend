@@ -2,24 +2,23 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import { useEffect, useState } from 'react';
-import Tree from 'antd/lib/tree';
+import { useState } from 'react';
+import { Tree, TreeDataNode } from 'antd';
+import { useNavigate } from "react-router-dom";
 import Remote from "@everyworkflow/panel-bundle/service/remote";
 import AlertAction, { ALERT_TYPE_ERROR } from "@everyworkflow/panel-bundle/action/alert-action";
-import { useNavigate } from "react-router-dom";
-import { DataNode } from 'antd/lib/tree';
 
-const initTreeData: DataNode[] = [{ title: 'Default - Create new scope', key: 'default' }];
+const initTreeData: TreeDataNode[] = [{ title: 'Default - Create new scope', key: 'default' }];
 
 const ScopeSidebar = () => {
     const [treeData, setTreeData] = useState<Array<any>>(initTreeData);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        onLoadData({ key: 'default' }).then();
-    }, []);
+    // useEffect(() => {
+    //     onLoadData({ key: 'default' }).then();
+    // }, []);
 
-    const updateTreeData = (list: DataNode[], key: React.Key, children: DataNode[]): DataNode[] => {
+    const updateTreeData = (list: TreeDataNode[], key: React.Key, children: TreeDataNode[]): TreeDataNode[] => {
         if (list.length === 0 && children.length) {
             return children;
         }

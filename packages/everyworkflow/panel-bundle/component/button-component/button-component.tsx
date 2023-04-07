@@ -2,7 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Button from 'antd/lib/button';
+import { Button } from 'antd';
 import { NavLink } from 'react-router-dom';
 import ButtonInterface from "@everyworkflow/panel-bundle/model/button-interface";
 import StyleHelper from '@everyworkflow/panel-bundle/helper/style-helper';

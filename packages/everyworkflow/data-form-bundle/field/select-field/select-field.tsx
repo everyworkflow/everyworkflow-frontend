@@ -3,8 +3,7 @@
  */
 
 import { useContext, useCallback } from 'react';
-import Form from 'antd/lib/form';
-import Select from 'antd/lib/select';
+import { Form, Select } from 'antd';
 import SelectFieldInterface from '@everyworkflow/data-form-bundle/model/field/select-field-interface';
 import OptionInterface from '@everyworkflow/data-form-bundle/model/field/select/option-interface';
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";

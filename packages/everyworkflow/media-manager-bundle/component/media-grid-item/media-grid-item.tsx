@@ -4,11 +4,7 @@
 
 import { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
-import Col from 'antd/lib/col';
-import Space from 'antd/lib/space';
-import Button from 'antd/lib/button';
-import Tooltip from 'antd/lib/tooltip';
-import Checkbox from 'antd/lib/checkbox';
+import { Col, Button, Space, Tooltip, Checkbox } from 'antd';
 import SettingOutlined from '@ant-design/icons/SettingOutlined';
 import EyeOutlined from '@ant-design/icons/EyeOutlined';
 import MediaItemInterface from '@everyworkflow/media-manager-bundle/model/media-item-interface';

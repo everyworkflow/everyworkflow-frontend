@@ -2,10 +2,10 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
+import { Col } from 'antd';
 import ColSectionInterface from "@everyworkflow/data-form-bundle/model/section/col-section-interface";
 import FieldRenderComponent from "@everyworkflow/data-form-bundle/component/field-render-component";
 import SectionRenderComponent from "@everyworkflow/data-form-bundle/component/section-render-component";
-import Col from 'antd/lib/col';
 
 interface ColSectionProps {
     sectionData: ColSectionInterface;

@@ -3,12 +3,9 @@
  */
 
 import { useEffect, useState } from 'react';
-import Dropdown from 'antd/lib/dropdown';
-import Alert from 'antd/lib/alert';
-import Badge from 'antd/lib/badge';
-import Button from 'antd/lib/button';
-import ReactTimeago from 'react-timeago';
+import { Alert, Dropdown, Badge, Button, Space } from 'antd';
 import BellOutlined from '@ant-design/icons/BellOutlined';
+import ReactTimeago from 'react-timeago';
 import IndexedDb from '@everyworkflow/panel-bundle/service/indexed-db';
 
 const NotificationDropdown = () => {
@@ -34,37 +31,68 @@ const NotificationDropdown = () => {
         setNotificationCount(0);
     }
 
+    const getMenu = () => {
+        const menu: any = {
+            style: {
+                maxHeight: '80vh',
+                overflow: 'auto',
+            },
+            items: [
+                {
+                    label: (
+                        <Space style={{
+                            justifyContent: 'space-between',
+                            width: '100%',
+                            padding: '4px 0',
+                        }}>
+                            <Badge count={notificationCount} />
+                            <Button type="default" size="small" onClick={clearAllHandler}>Clear All</Button>
+                        </Space>
+                    ),
+                    type: 'group',
+                    key: 'notification-menu-1',
+                },
+            ]
+        };
+
+        if (notificationCount === 0) {
+            menu.items.push({
+                label: (
+                    <div style={{
+                        padding: '16px 24px',
+                    }}>No new notification</div>
+                ),
+                type: 'group',
+                key: 'no-new-notification',
+            });
+        } else {
+            alertData.map((alert: any, index: number) => {
+                menu.items.push({
+                    label: (
+                        <div key={index}>
+                            <Alert
+                                message={alert.message}
+                                description={alert.description}
+                                type={alert.type?.replace('alert_type_', '')}
+                            />
+                            <small>
+                                <ReactTimeago date={alert.date} live={false} />
+                            </small>
+                        </div>
+                    ),
+                    type: 'group',
+                    key: 'notification-item-key-' + index,
+                });
+            });
+        }
+
+        return menu;
+    }
+
     return (
         <>
             <Dropdown
-                overlay={(
-                    <div className="app-notification-panel-overlay">
-                        <div className="notification-header">
-                            <Badge count={notificationCount} />
-                            <Button type="default" size="small" onClick={clearAllHandler}>Clear All</Button>
-                        </div>
-                        {notificationCount === 0 ? (
-                            <div style={{
-                                padding: '16px 24px',
-                            }}>No new notification</div>
-                        ) : (
-                            <div className="notification-body">
-                                {alertData.map((alert: any, index: number) => (
-                                    <div key={index} className="notification-item">
-                                        <Alert
-                                            message={alert.message}
-                                            description={alert.description}
-                                            type={alert.type?.replace('alert_type_', '')}
-                                        />
-                                        <div className="notification-item-footer">
-                                            <ReactTimeago date={alert.date} live={false} />
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                )}
+                menu={getMenu()}
                 trigger={['click']}>
                 <Button
                     icon={<BellOutlined />}

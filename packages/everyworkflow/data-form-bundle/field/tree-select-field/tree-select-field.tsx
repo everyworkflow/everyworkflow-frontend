@@ -3,8 +3,7 @@
  */
 
 import { useContext, useCallback } from 'react';
-import Form from 'antd/lib/form';
-import TreeSelect from 'antd/lib/tree-select';
+import { Form, TreeSelect } from 'antd';
 import DynamicFieldPropsInterface from '@everyworkflow/data-form-bundle/model/dynamic-field-props-interface';
 import TreeSelectFieldInterface from '@everyworkflow/data-form-bundle/model/field/tree-select-field-interface';
 import FormContext from '@everyworkflow/data-form-bundle/context/form-context';

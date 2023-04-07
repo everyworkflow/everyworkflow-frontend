@@ -3,10 +3,7 @@
  */
 
 import { useContext } from 'react';
-import Space from 'antd/lib/space';
-import Dropdown from 'antd/lib/dropdown';
-import Menu from 'antd/lib/menu';
-import Button from 'antd/lib/button';
+import { Menu, Dropdown, Button, Space } from 'antd';
 import EllipsisOutlined from '@ant-design/icons/EllipsisOutlined';
 import DataGridContext from '@everyworkflow/data-grid-bundle/context/data-grid-context';
 import { DataGridRowActionMaps } from '@everyworkflow/data-grid-bundle/root/data-grid-row-action-maps';

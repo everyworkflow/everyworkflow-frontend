@@ -2,11 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 import { useState } from 'react';
-import Table from 'antd/lib/table';
-import Popconfirm from 'antd/lib/popconfirm';
-import Space from 'antd/lib/space';
-import Button from 'antd/lib/button';
-import Input from 'antd/lib/input';
+import { Table, Button, Space, Input, Popconfirm } from 'antd';
 import SearchOutlined from '@ant-design/icons/SearchOutlined';
 import Highlighter from 'react-highlight-words';
 import AlertAction, { ALERT_TYPE_SUCCESS } from '@everyworkflow/panel-bundle/action/alert-action';

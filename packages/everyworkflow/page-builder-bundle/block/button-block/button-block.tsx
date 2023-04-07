@@ -3,10 +3,10 @@
  */
 
 import { Link } from 'react-router-dom';
+import { Button } from "antd";
 import StyleHelper from "@everyworkflow/panel-bundle/helper/style-helper";
 import ButtonBlockInterface from "@everyworkflow/page-builder-bundle/model/block/button-block-interface";
 import BlockWrapperComponent from "@everyworkflow/page-builder-bundle/component/block-wrapper-component";
-import Button from "antd/lib/button";
 
 interface ButtonBlockProps {
     indexes?: Array<number>;

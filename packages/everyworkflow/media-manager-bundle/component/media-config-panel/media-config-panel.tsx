@@ -3,9 +3,7 @@
  */
 
 import { useContext } from 'react';
-import Image from 'antd/lib/image';
-import Form from 'antd/lib/form';
-import Input from 'antd/lib/input';
+import { Form, Input, Image } from 'antd';
 import MediaManagerContext from '@everyworkflow/media-manager-bundle/context/media-manager-context';
 import UrlHelper from "@everyworkflow/panel-bundle/helper/url-helper";
 

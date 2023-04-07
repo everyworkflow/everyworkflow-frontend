@@ -8,6 +8,8 @@ interface BlockInterface {
     block_type: string;
     class_name?: string;
     style?: CSSProperties;
+    use_style_dark?: boolean;
+    style_dark?: CSSProperties;
     block_data?: Array<any>;
 }
 

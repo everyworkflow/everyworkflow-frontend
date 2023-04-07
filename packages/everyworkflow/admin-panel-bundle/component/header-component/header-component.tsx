@@ -3,11 +3,7 @@
  */
 
 import { useContext, useRef } from 'react';
-import Layout from 'antd/lib/layout';
-import Button from 'antd/lib/button';
-import Space from 'antd/lib/space';
-import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
+import { theme, Layout, Row, Col, Button, Space } from 'antd';
 import { useSize } from 'ahooks';
 import MenuUnfoldOutlined from "@ant-design/icons/MenuUnfoldOutlined";
 import AdminPanelContext from "@everyworkflow/admin-panel-bundle/context/admin-panel-context";
@@ -17,6 +13,7 @@ import NotificationDropdown from '@everyworkflow/admin-panel-bundle/component/he
 import AccountDropdown from '@everyworkflow/admin-panel-bundle/component/header-component/account-dropdown';
 
 const HeaderComponent = () => {
+    const { token } = theme.useToken();
     const { state: panelState } = useContext(PanelContext);
     const { dispatch: adminPanelDispatch } = useContext(AdminPanelContext);
     const headerRef = useRef<HTMLDivElement>(null);
@@ -30,8 +27,18 @@ const HeaderComponent = () => {
         <>
             <div
                 ref={headerRef}
-                className="app-header-panel">
-                <Layout.Header>
+                className="app-header-panel" style={{
+                    backgroundColor: token.colorBgBase,
+                    boxShadow: token.boxShadow,
+                    position: 'sticky',
+                    top: 0,
+                    zIndex: 1,
+                }}>
+                <Layout.Header style={{
+                    backgroundColor: token.colorBgBase,
+                    paddingLeft: token.paddingContentHorizontalLG,
+                    paddingRight: token.paddingContentHorizontalLG,
+                }}>
                     <Row gutter={16} align="middle" style={{ height: 'inherit' }}>
                         <Col span={12}>
                             <Space>

@@ -2,10 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Layout from "antd/lib/layout";
-import Row from "antd/lib/row";
-import Col from "antd/lib/col";
-import Menu from "antd/lib/menu";
+import { Layout, Row, Col, Menu } from "antd";
 import Link from "next/link";
 import ShoppingCartOutlined from "@ant-design/icons/ShoppingCartOutlined";
 import HeaderTopComponent from "@everyworkflow/store-panel-bundle/component/header-top-component";

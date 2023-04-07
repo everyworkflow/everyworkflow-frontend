@@ -2,7 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import notification from "antd/lib/notification";
+import { notification } from "antd";
 import AlertDataInterface from "@everyworkflow/panel-bundle/model/alert-data-interface";
 import IndexedDb from '@everyworkflow/panel-bundle/service/indexed-db';
 

@@ -3,9 +3,7 @@
  */
 
 import { useContext } from 'react';
-import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
-import Button from 'antd/lib/button';
+import { Row, Col, Button } from 'antd';
 import MediaGridItem from '@everyworkflow/media-manager-bundle/component/media-grid-item';
 import MediaItemInterface from '@everyworkflow/media-manager-bundle/model/media-item-interface';
 import MediaManagerContext from '@everyworkflow/media-manager-bundle/context/media-manager-context';

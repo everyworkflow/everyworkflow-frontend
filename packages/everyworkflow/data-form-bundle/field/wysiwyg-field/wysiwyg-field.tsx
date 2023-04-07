@@ -3,8 +3,7 @@
  */
 
 import { useState, useCallback, useContext, useRef } from 'react';
-import Form from 'antd/lib/form';
-import Input from 'antd/lib/input';
+import { Form, Input } from 'antd';
 import TextareaFieldInterface from '@everyworkflow/data-form-bundle/model/field/textarea-field-interface';
 import MediaPanelComponent from "@everyworkflow/media-manager-bundle/component/media-panel-component";
 import { MEDIA_MANAGER_TYPE_SINGLE_SELECT } from "@everyworkflow/media-manager-bundle/component/media-manager-component/media-manager-component";
@@ -12,8 +11,8 @@ import SelectedMediaItemInterface from "@everyworkflow/media-manager-bundle/mode
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";
 import UrlHelper from '@everyworkflow/panel-bundle/helper/url-helper';
 import FormContext from '@everyworkflow/data-form-bundle/context/form-context';
-import { Editor } from '@tinymce/tinymce-react';
 import PanelConfig from '@everyworkflow/panel-bundle/config/panel-config';
+import { Editor } from '@tinymce/tinymce-react';
 
 interface WysiwygFieldProps extends DynamicFieldPropsInterface {
     fieldData: TextareaFieldInterface;
@@ -84,11 +83,11 @@ const WysiwygField = ({ fieldData, onChange, children }: WysiwygFieldProps) => {
                                 'removeformat code fullscreen | help',
                             content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                             fullscreen_native: true,
-                            setup: function (editor) {
+                            setup: function(editor) {
                                 editor.ui.registry.addButton('media_image_selector', {
                                     tooltip: 'Media image selector',
                                     icon: 'image',
-                                    onAction: function () {
+                                    onAction: function() {
                                         setIsMediaSelectorEnabled(true);
                                     }
                                 });

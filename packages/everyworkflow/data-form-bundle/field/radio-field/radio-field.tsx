@@ -3,8 +3,8 @@
  */
 
 import { useContext, useState, useCallback } from 'react';
-import Form from 'antd/lib/form';
-import Radio, { RadioChangeEvent } from 'antd/lib/radio';
+import { Form, Radio } from 'antd';
+import { RadioChangeEvent } from 'antd/lib/radio';
 import RadioFieldInterface from '@everyworkflow/data-form-bundle/model/field/radio-field-interface';
 import OptionInterface from '@everyworkflow/data-form-bundle/model/field/select/option-interface';
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";

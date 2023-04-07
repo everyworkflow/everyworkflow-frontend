@@ -4,9 +4,7 @@
 
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Button from 'antd/lib/button';
-import Space from 'antd/lib/space';
-import Popconfirm from 'antd/lib/popconfirm';
+import { Button, Space, Popconfirm } from 'antd';
 import PanelContext from "@everyworkflow/panel-bundle/context/panel-context";
 import DataFormInterface from "@everyworkflow/data-form-bundle/model/data-form-interface";
 import { ACTION_SET_PAGE_TITLE } from "@everyworkflow/panel-bundle/reducer/panel-reducer";

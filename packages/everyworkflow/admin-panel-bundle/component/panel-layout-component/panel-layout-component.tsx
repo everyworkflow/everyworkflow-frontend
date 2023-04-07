@@ -3,7 +3,7 @@
  */
 
 import { useContext, useEffect, useRef, useState } from 'react';
-import Layout from 'antd/lib/layout';
+import { Layout } from 'antd';
 import { useClickAway } from "ahooks";
 import Remote from "@everyworkflow/panel-bundle/service/remote";
 import AdminPanelContext from "@everyworkflow/admin-panel-bundle/context/admin-panel-context";
@@ -60,14 +60,20 @@ const PanelLayoutComponent = ({ children }: PanelLayoutComponentProps) => {
     }, [sidebarRef, () => document.getElementById('btn-app-main-menu')]);
 
     return (
-        <Layout className="layout">
+        <Layout>
             <Layout.Sider
                 collapsible collapsed={isMainSidebarCollapsed} onCollapse={onMainSidebarCollapseClick}
-                className={state.show_mobile_app_sidebar ? 'app-main-side-panel active-mobile' : 'app-main-side-panel'}
                 width={256}
-                theme="light">
+                theme="light"
+                style={{
+                    zIndex: 2,
+                }}>
                 <div ref={sidebarRef}>
-                    <div className="app-sidebar-wrapper">
+                    <div style={{
+                        maxHeight: 'calc(100vh - 48px)',
+                        position: 'fixed',
+                        width: 256,
+                    }}>
                         <SidebarComponent />
                     </div>
                 </div>

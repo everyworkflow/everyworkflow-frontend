@@ -3,9 +3,7 @@
  */
 
 import { useContext, useState, useCallback } from 'react';
-import Space from 'antd/lib/space';
-import Form from 'antd/lib/form';
-import Switch from 'antd/lib/switch';
+import { Form, Space, Switch } from 'antd';
 import SwitchFieldInterface from '@everyworkflow/data-form-bundle/model/field/switch-field-interface';
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";
 import FormContext from '@everyworkflow/data-form-bundle/context/form-context';

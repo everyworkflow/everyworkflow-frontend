@@ -3,16 +3,13 @@
  */
 
 import { useCallback, useContext, useEffect, useState } from 'react';
-import Form from 'antd/lib/form';
-import Input from 'antd/lib/input';
-import Button from 'antd/lib/button';
-import Image from 'antd/lib/image';
+import { Form, Input, Button, Image } from 'antd';
+import FileImageOutlined from '@ant-design/icons/FileImageOutlined';
 import MediaImageSelectorFieldInterface
     from '@everyworkflow/media-manager-bundle/model/field/media-image-selector-field-interface';
 import MediaPanelComponent from "@everyworkflow/media-manager-bundle/component/media-panel-component";
 import { MEDIA_MANAGER_TYPE_SINGLE_SELECT } from '@everyworkflow/media-manager-bundle/component/media-manager-component/media-manager-component';
 import SelectedMediaItemInterface from '@everyworkflow/media-manager-bundle/model/selected-media-item-interface';
-import FileImageOutlined from '@ant-design/icons/FileImageOutlined';
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";
 import FormContext from '@everyworkflow/data-form-bundle/context/form-context';
 import UrlHelper from '@everyworkflow/panel-bundle/helper/url-helper';

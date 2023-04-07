@@ -3,8 +3,7 @@
  */
 
 import { useContext, useCallback } from 'react';
-import Form from 'antd/lib/form';
-import DatePicker from 'antd/lib/date-picker';
+import { Form, DatePicker } from 'antd';
 import moment from 'moment';
 import DateTimeRangePickerFieldInterface
     from "@everyworkflow/data-form-bundle/model/field/date-time-range-picker-field-interface";
@@ -26,7 +25,7 @@ const DateTimeRangePickerField = ({ fieldData, onChange, children }: DateTimeRan
         return undefined;
     }, [fieldData, formState.form_errors]);
 
-    const handleChange = (value: any, dateString: [string, string]) => {
+    const handleChange = (_: any, dateString: [string, string]) => {
         if (onChange) {
             onChange(dateString);
         }

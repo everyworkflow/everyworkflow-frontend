@@ -3,27 +3,22 @@
  */
 
 import { forwardRef, useCallback, useContext, useEffect, useState } from 'react';
-import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
-import Form from 'antd/lib/form';
-import Button from 'antd/lib/button';
-import Image from 'antd/lib/image';
-import Tooltip from 'antd/lib/tooltip';
+import { Row, Col, Form, Button, Space, Image, Tooltip } from 'antd';
 import { ReactSortable } from 'react-sortablejs';
+import DeleteOutlined from '@ant-design/icons/DeleteOutlined';
+import EyeOutlined from '@ant-design/icons/EyeOutlined';
+import SettingOutlined from '@ant-design/icons/SettingOutlined';
+import FileImageOutlined from '@ant-design/icons/FileImageOutlined';
 import MediaImageSelectorFieldInterface from '@everyworkflow/media-manager-bundle/model/field/media-image-selector-field-interface';
 import MediaPanelComponent from "@everyworkflow/media-manager-bundle/component/media-panel-component";
 import { MEDIA_MANAGER_TYPE_MULTI_SELECT } from '@everyworkflow/media-manager-bundle/component/media-manager-component/media-manager-component';
 import MediaGridItemContent from '@everyworkflow/media-manager-bundle/component/media-grid-item/media-grid-item-content';
-import Space from 'antd/lib/space';
-import DeleteOutlined from '@ant-design/icons/DeleteOutlined';
-import EyeOutlined from '@ant-design/icons/EyeOutlined';
-import SettingOutlined from '@ant-design/icons/SettingOutlined';
 import SelectedMediaItemInterface from '@everyworkflow/media-manager-bundle/model/selected-media-item-interface';
 import FieldEditPanel from '@everyworkflow/media-manager-bundle/component/field-edit-panel';
-import FileImageOutlined from '@ant-design/icons/FileImageOutlined';
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";
 import FormContext from '@everyworkflow/data-form-bundle/context/form-context';
 import PreviewImageInterface from '@everyworkflow/media-manager-bundle/model/preview-image-interface';
+import UrlHelper from '@everyworkflow/panel-bundle/helper/url-helper';
 
 interface MediaImageGallerySelectorFieldProps extends DynamicFieldPropsInterface {
     fieldData: MediaImageSelectorFieldInterface;
@@ -85,14 +80,25 @@ const MediaImageGallerySelectorField = ({ fieldData, children }: MediaImageGalle
             path_name: item.path_name ?? '',
             thumbnail_path: item.thumbnail_path ?? '',
         }));
-        handleMediaGalleryUpdate(selectedItems);
+        updateMediaGalleryField(selectedItems);
     }
 
     const handleMediaGalleryUpdate = (selectedItems: Array<any>) => {
-        setSelectedMediaItems(selectedItems);
+        const newSelectedItems = [...selectedMediaItems];
+        selectedItems.forEach(item => {
+            const alreadyExistingItemIndex = newSelectedItems.findIndex(selectedItem => selectedItem.path_name === item.path_name);
+            if (alreadyExistingItemIndex < 0) {
+                newSelectedItems.push(item);
+            }
+        });
+        updateMediaGalleryField(selectedItems);
+    }
+
+    const updateMediaGalleryField = (items: Array<any>) => {
+        setSelectedMediaItems(items);
         const fieldValues: any = {};
         if (fieldData.name) {
-            fieldValues[fieldData.name] = selectedItems;
+            fieldValues[fieldData.name] = items;
             formState.form?.setFieldsValue(fieldValues);
         }
     }
@@ -128,7 +134,7 @@ const MediaImageGallerySelectorField = ({ fieldData, children }: MediaImageGalle
                                                 <MediaGridItemContent
                                                     title={mediaItem.title}
                                                     pathName={mediaItem.path_name}
-                                                    thumbnailPath={mediaItem.thumbnail_path}
+                                                    thumbnailPath={mediaItem.thumbnail_path ? mediaItem.thumbnail_path: mediaItem.path_name}
                                                     imageSize={216}
                                                 />
                                             </Button>
@@ -159,7 +165,7 @@ const MediaImageGallerySelectorField = ({ fieldData, children }: MediaImageGalle
                                                     onClick={() => {
                                                         let newSelectedMediaItems = [...getSortableList()];
                                                         newSelectedMediaItems.splice(mediaItemIndex, 1);
-                                                        handleMediaGalleryUpdate(newSelectedMediaItems);
+                                                        updateMediaGalleryField(newSelectedMediaItems);
                                                     }}>
                                                     <DeleteOutlined />
                                                 </Button>
@@ -177,7 +183,7 @@ const MediaImageGallerySelectorField = ({ fieldData, children }: MediaImageGalle
                             setIsMediaSelectorEnabled(true);
                         }}
                         disabled={fieldData.is_disabled || !!(fieldData.name && formState.disable_field_names?.includes(fieldData.name))}>
-                        Select media images
+                        Add media images
                     </Button>
                     {isMediaSelectorEnabled && (
                         <MediaPanelComponent
@@ -208,21 +214,21 @@ const MediaImageGallerySelectorField = ({ fieldData, children }: MediaImageGalle
                             }}
                         />
                     )}
-                    {previewItem && (
+                    {previewItem ? (
                         <Image
                             width={0}
                             height={0}
                             style={{ display: 'none' }}
-                            src={previewItem.src}
+                            src={UrlHelper.buildImgUrlFromPath(previewItem.src)}
                             preview={{
-                                src: previewItem.src,
+                                src: UrlHelper.buildImgUrlFromPath(previewItem.src),
                                 visible: previewItem.visible,
                                 onVisibleChange: () => {
                                     setPreviewItem(undefined);
                                 },
                             }}
                         />
-                    )}
+                    ) : null}
                 </>
             </Form.Item>
             {children}

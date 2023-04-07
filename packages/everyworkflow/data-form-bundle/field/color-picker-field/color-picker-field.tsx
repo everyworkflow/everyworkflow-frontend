@@ -3,10 +3,7 @@
  */
 
 import { useContext, useState, useCallback } from 'react';
-import Form from 'antd/lib/form';
-import Button from 'antd/lib/button';
-import Space from 'antd/lib/space';
-import Popover from 'antd/lib/popover';
+import { Form, Button, Space, Popover } from 'antd';
 import { ColorResult, SketchPicker } from 'react-color';
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";
 import ColorPickerFieldInterface from '@everyworkflow/data-form-bundle/model/field/color-picker-field-interface';

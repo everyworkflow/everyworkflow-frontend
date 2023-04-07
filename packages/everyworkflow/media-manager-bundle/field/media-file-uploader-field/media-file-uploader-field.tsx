@@ -3,16 +3,12 @@
  */
 
 import { useContext, useState, useEffect, useCallback } from 'react';
-import Form from 'antd/lib/form';
-import Input from 'antd/lib/input';
-import Button from 'antd/lib/button';
-import Image from 'antd/lib/image';
+import { Form, Button, Image, Input, Upload } from 'antd';
+import UploadOutlined from '@ant-design/icons/UploadOutlined';
 import MediaImageUploaderFieldInterface
     from '@everyworkflow/media-manager-bundle/model/field/media-image-uploader-field-interface';
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";
 import FormContext from '@everyworkflow/data-form-bundle/context/form-context';
-import Upload from 'antd/lib/upload';
-import UploadOutlined from '@ant-design/icons/UploadOutlined';
 import UrlHelper from '@everyworkflow/panel-bundle/helper/url-helper';
 import LocalStorage from '@everyworkflow/panel-bundle/service/local-storage';
 import AlertAction, { ALERT_TYPE_ERROR, ALERT_TYPE_SUCCESS } from '@everyworkflow/panel-bundle/action/alert-action';

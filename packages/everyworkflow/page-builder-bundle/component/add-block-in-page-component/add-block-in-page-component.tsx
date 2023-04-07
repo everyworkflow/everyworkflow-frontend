@@ -3,9 +3,8 @@
  */
 
 import React, { useContext, useState } from 'react';
+import { Button, Tooltip } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import Tooltip from "antd/lib/tooltip";
-import Button from "antd/lib/button";
 import SidePanelComponent from "@everyworkflow/panel-bundle/component/side-panel-component";
 import { PANEL_SIZE_MEDIUM } from "@everyworkflow/panel-bundle/component/side-panel-component/side-panel-component";
 import BlockInterface from "@everyworkflow/page-builder-bundle/model/block-interface";

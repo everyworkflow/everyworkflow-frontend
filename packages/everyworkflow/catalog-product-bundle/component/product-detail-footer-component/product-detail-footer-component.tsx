@@ -3,7 +3,7 @@
  */
 
 import { useContext } from 'react';
-import Tabs from 'antd/lib/tabs';
+import { Tabs } from 'antd';
 import ProductDetailContext from '@everyworkflow/catalog-product-bundle/context/product-detail-context';
 
 const ProductDetailFooterComponent = () => {

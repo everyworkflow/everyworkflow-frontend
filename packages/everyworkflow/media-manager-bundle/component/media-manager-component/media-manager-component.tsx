@@ -3,10 +3,8 @@
  */
 
 import { useEffect, useReducer, useRef } from 'react';
-import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
+import { Row, Col, Image } from 'antd';
 import { useSize } from 'ahooks';
-import Image from 'antd/lib/image';
 import SidebarComponent from '@everyworkflow/media-manager-bundle/component/sidebar-component';
 import MediaGrid from '@everyworkflow/media-manager-bundle/component/media-grid';
 import MediaManagerContext from '@everyworkflow/media-manager-bundle/context/media-manager-context';

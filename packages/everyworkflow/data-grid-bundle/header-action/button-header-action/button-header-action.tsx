@@ -3,8 +3,7 @@
  */
 
 import { useCallback } from 'react';
-import Popconfirm from 'antd/lib/popconfirm';
-import Button from 'antd/lib/button';
+import { Button, Popconfirm } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import ButtonHeaderActionInterface from '@everyworkflow/data-grid-bundle/model/header-action/button-header-action-interface';
 

@@ -3,14 +3,21 @@
  */
 
 import { useContext, useEffect } from 'react';
-import Col from 'antd/lib/col';
-import Row from 'antd/lib/row';
+import { Row, Col } from 'antd';
 import { DataFormFieldMaps } from "@everyworkflow/data-form-bundle/root/data-form-field-maps";
 import BaseFieldInterface from '@everyworkflow/data-form-bundle/model/field/base-field-interface';
 import FormContext from '@everyworkflow/data-form-bundle/context/form-context';
 import UpdateFormAction from '@everyworkflow/data-form-bundle/action/update-form-action';
 import { FORM_TYPE_INLINE } from '@everyworkflow/data-form-bundle/component/data-form-component/data-form-component';
-import { ACTION_SET_FORM_UPDATE_DATA, ACTION_SET_STATE_DATA } from '@everyworkflow/data-form-bundle/reducer/form-reducer';
+import {
+    ACTION_ADD_DISABLE_FIELD_NAMES,
+    ACTION_ADD_HIDDEN_FIELD_NAMES,
+    ACTION_ADD_INVISIBLE_FIELD_NAMES,
+    ACTION_REMOVE_DISABLE_FIELD_NAMES,
+    ACTION_REMOVE_HIDDEN_FIELD_NAMES,
+    ACTION_REMOVE_INVISIBLE_FIELD_NAMES,
+    ACTION_SET_FORM_UPDATE_DATA
+} from '@everyworkflow/data-form-bundle/reducer/form-reducer';
 
 interface RenderFieldProps {
     fields: Array<BaseFieldInterface>;
@@ -28,58 +35,67 @@ const FieldRenderComponent = ({ fields = [] }: RenderFieldProps) => {
     }, [fields]);
 
     const fieldActionHandler = (field: BaseFieldInterface, value: any, actionType = 'init') => {
+        if (actionType === 'init' && value === undefined && field.hasOwnProperty('default_value')) {
+            value = field.default_value;
+        }
+        if (typeof value === 'boolean') {
+            value = Number(value);
+        }
         const actions: Array<any> = field.field_actions[value] ?? [];
 
-        let hiddenFieldNames = formState.hidden_field_names ?? [];
-        let disableFieldNames = formState.disable_field_names ?? [];
-        let invisibleFieldNames = formState.invisible_field_names ?? [];
         actions.forEach((action: any) => {
             switch (action.action_type) {
                 case 'show_field': {
                     action.field_names?.forEach((fieldName: string) => {
-                        if (hiddenFieldNames.includes(fieldName)) {
-                            hiddenFieldNames = hiddenFieldNames.filter((item: string) => item !== fieldName);
-                        }
+                        formDispatch({
+                            type: ACTION_REMOVE_HIDDEN_FIELD_NAMES,
+                            payload: fieldName,
+                        });
                     });
                     break;
                 }
                 case 'hide_field': {
                     action.field_names?.forEach((fieldName: string) => {
-                        if (!hiddenFieldNames.includes(fieldName)) {
-                            hiddenFieldNames.push(fieldName);
-                        }
+                        formDispatch({
+                            type: ACTION_ADD_HIDDEN_FIELD_NAMES,
+                            payload: fieldName,
+                        });
                     });
                     break;
                 }
                 case 'enable_field': {
                     action.field_names?.forEach((fieldName: string) => {
-                        if (disableFieldNames.includes(fieldName)) {
-                            disableFieldNames = disableFieldNames.filter((item: string) => item !== fieldName);
-                        }
+                        formDispatch({
+                            type: ACTION_REMOVE_DISABLE_FIELD_NAMES,
+                            payload: fieldName,
+                        });
                     });
                     break;
                 }
                 case 'disable_field': {
                     action.field_names?.forEach((fieldName: string) => {
-                        if (!disableFieldNames.includes(fieldName)) {
-                            disableFieldNames.push(fieldName);
-                        }
+                        formDispatch({
+                            type: ACTION_ADD_DISABLE_FIELD_NAMES,
+                            payload: fieldName,
+                        });
                     });
                     break;
                 }
                 case 'add_invisible_field': {
                     action.field_names?.forEach((fieldName: string) => {
-                        if (!invisibleFieldNames.includes(fieldName)) {
-                            invisibleFieldNames.push(fieldName);
-                        }
+                        formDispatch({
+                            type: ACTION_ADD_INVISIBLE_FIELD_NAMES,
+                            payload: fieldName,
+                        });
                     });
                     break;
                 }
                 case 'remove_invisible_field': {
                     action.field_names?.forEach((fieldName: string) => {
-                        if (invisibleFieldNames.includes(fieldName)) {
-                            invisibleFieldNames = invisibleFieldNames.filter((item: string) => item !== fieldName);
-                        }
+                        formDispatch({
+                            type: ACTION_REMOVE_INVISIBLE_FIELD_NAMES,
+                            payload: fieldName,
+                        });
                     });
                     break;
                 }
@@ -100,15 +116,6 @@ const FieldRenderComponent = ({ fields = [] }: RenderFieldProps) => {
                     }
                     break;
                 }
-            }
-        });
-
-        formDispatch({
-            type: ACTION_SET_STATE_DATA,
-            payload: {
-                hidden_field_names: hiddenFieldNames,
-                disable_field_names: disableFieldNames,
-                invisibleFieldNames: invisibleFieldNames,
             }
         });
     }

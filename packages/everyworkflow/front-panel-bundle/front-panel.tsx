@@ -3,28 +3,13 @@
  */
 
 import FrontPanelRoot from "@everyworkflow/front-panel-bundle/front-panel-root";
-import { ThemeSwitcherProvider } from 'react-css-theme-switcher';
-import LocalStorage from '@everyworkflow/panel-bundle/service/local-storage';
-
-const themes = {
-    default: `/dist/css/style.css`,
-    dark: `/dist/css/style.dark.css`,
-};
+import RootPanelComponent from '@everyworkflow/panel-bundle/component/root-panel-component';
 
 const FrontPanel = () => {
-    const getDefaultTheme = () => {
-        const persistedTheme: string | undefined = LocalStorage.get('ew_theme', false);
-        if (persistedTheme === 'dark') {
-            return 'dark';
-        }
-
-        return 'default';
-    }
-
     return (
-        <ThemeSwitcherProvider defaultTheme={getDefaultTheme()} themeMap={themes}>
+        <RootPanelComponent>
             <FrontPanelRoot />
-        </ThemeSwitcherProvider>
+        </RootPanelComponent>
     );
 }
 

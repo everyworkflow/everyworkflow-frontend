@@ -3,8 +3,7 @@
  */
 
 import { useContext, useCallback } from "react";
-import Form from "antd/lib/form";
-import DatePicker from "antd/lib/date-picker";
+import { Form, DatePicker } from "antd";
 import moment from "moment";
 import DatePickerFieldInterface from "@everyworkflow/data-form-bundle/model/field/date-picker-field-interface";
 import DynamicFieldPropsInterface from "@everyworkflow/data-form-bundle/model/dynamic-field-props-interface";
@@ -29,7 +28,7 @@ const DatePickerField = ({
         return undefined;
     }, [fieldData, formState.form_errors]);
 
-    const handleChange = (value: any, dateString: string) => {
+    const handleChange = (_: any, dateString: string) => {
         if (onChange) {
             onChange(dateString);
         }

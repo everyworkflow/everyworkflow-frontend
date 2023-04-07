@@ -3,8 +3,7 @@
  */
 
 import { useContext, useCallback } from 'react';
-import Popconfirm from 'antd/lib/popconfirm';
-import Button from 'antd/lib/button';
+import { Button, Popconfirm } from 'antd';
 import { createSearchParams, generatePath, useNavigate } from 'react-router-dom';
 import ButtonBulkActionInterface from '@everyworkflow/data-grid-bundle/model/bulk-action/button-bulk-action-interface';
 import DataGridContext from '@everyworkflow/data-grid-bundle/context/data-grid-context';

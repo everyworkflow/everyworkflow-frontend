@@ -1,9 +1,9 @@
 /*
 * @copyright EveryWorkflow. All rights reserved.
 */
+
 import { useContext, useEffect } from 'react';
-import Form from 'antd/lib/form';
-import Card from 'antd/lib/card';
+import { Form, Card } from 'antd';
 import PanelContext from '@everyworkflow/panel-bundle/context/panel-context';
 import { ACTION_SET_PAGE_TITLE } from '@everyworkflow/panel-bundle/reducer/panel-reducer';
 import DataFormComponent from '@everyworkflow/data-form-bundle/component/data-form-component';

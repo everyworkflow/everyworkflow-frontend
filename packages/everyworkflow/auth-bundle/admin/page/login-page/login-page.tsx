@@ -3,10 +3,7 @@
  */
 
 import { useContext, useEffect, useState } from 'react';
-import Form from 'antd/lib/form';
-import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
-import Button from 'antd/lib/button';
+import { Row, Col, Form, Button } from 'antd';
 import PanelContext from "@everyworkflow/panel-bundle/context/panel-context";
 import { ACTION_SET_AUTH, ACTION_SET_PAGE_TITLE } from "@everyworkflow/panel-bundle/reducer/panel-reducer";
 import DataFormComponent from '@everyworkflow/data-form-bundle/component/data-form-component';

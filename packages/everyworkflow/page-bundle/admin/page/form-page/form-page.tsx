@@ -4,8 +4,7 @@
 
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Form from 'antd/lib/form';
-import Card from 'antd/lib/card';
+import { Form, Card } from 'antd';
 import PanelContext from "@everyworkflow/panel-bundle/context/panel-context";
 import { ACTION_SET_PAGE_TITLE } from "@everyworkflow/panel-bundle/reducer/panel-reducer";
 import Remote from "@everyworkflow/panel-bundle/service/remote";

@@ -4,8 +4,8 @@
 
 import { useCallback } from 'react';
 import moment from 'moment';
+import { Popover } from 'antd';
 import SelectFieldInterface from '@everyworkflow/data-form-bundle/model/field/select-field-interface';
-import Popover from 'antd/lib/popover';
 
 interface DateTimePickerFieldColumnProps {
     fieldData?: SelectFieldInterface;
@@ -15,14 +15,14 @@ interface DateTimePickerFieldColumnProps {
 
 const DateTimePickerFieldColumn = ({ fieldData, fieldValue }: DateTimePickerFieldColumnProps) => {
     const getDateObject = useCallback(() => {
-        return moment(fieldValue);
+        return moment.utc(fieldValue).local();
     }, [fieldValue])
 
     return (
         <Popover content={(
-            <div>{getDateObject().format('YYYY-MM-DD hh:mm:ss A')}</div>
+            <div>{fieldValue} UTC</div>
         )}>
-            <span>{fieldValue}</span>
+            <span>{fieldValue ? getDateObject().format('YYYY-MM-DD hh:mm:ss A') : null}</span>
         </Popover>
     );
 }

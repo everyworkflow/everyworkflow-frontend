@@ -3,11 +3,9 @@
  */
 
 import { useState, useEffect } from 'react';
-import { useThemeSwitcher } from 'react-css-theme-switcher';
 import LocalStorage from '@everyworkflow/panel-bundle/service/local-storage';
 
 const ThemeSwitcher = () => {
-    const { switcher, themes, currentTheme, status } = useThemeSwitcher();
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
@@ -17,14 +15,10 @@ const ThemeSwitcher = () => {
         }
     }, [])
 
-    if (status === 'loading') {
-        return <span>Loading...</span>;
-    }
-
     const toggleDarkMode = () => {
-        const nextTheme = currentTheme === 'default' ? themes.dark : themes.default;
-        switcher({ theme: nextTheme });
-        setIsDarkMode(nextTheme === themes.dark);
+        const currentTheme = LocalStorage.get('ew_theme');
+        const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+        setIsDarkMode(nextTheme === 'light');
         LocalStorage.set('ew_theme', nextTheme, false);
     }
 

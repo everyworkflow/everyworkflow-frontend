@@ -4,7 +4,7 @@
 
 import { useCallback, useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Table from 'antd/lib/table';
+import { Table } from 'antd';
 import DataGridContext from '@everyworkflow/data-grid-bundle/context/data-grid-context';
 import FilterComponent from '@everyworkflow/data-grid-bundle/component/filter-component';
 import HeaderPanelComponent from '@everyworkflow/data-grid-bundle/component/header-panel-component';

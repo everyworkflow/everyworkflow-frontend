@@ -3,8 +3,7 @@
  */
 
 import { useContext, useCallback } from 'react';
-import Form from 'antd/lib/form';
-import Cascader from 'antd/lib/cascader';
+import { Form, Cascader } from 'antd';
 import DynamicFieldPropsInterface from '@everyworkflow/data-form-bundle/model/dynamic-field-props-interface';
 import CascaderFieldInterface from '@everyworkflow/data-form-bundle/model/field/cascader-field-interface';
 import FormContext from '@everyworkflow/data-form-bundle/context/form-context';

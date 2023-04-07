@@ -3,12 +3,7 @@
  */
 
 import { useContext, useState, useEffect } from 'react';
-import Menu from 'antd/lib/menu';
-import Tree from 'antd/lib/tree';
-import Input from 'antd/lib/input';
-import Space from 'antd/lib/space';
-import Button from 'antd/lib/button';
-import Dropdown from 'antd/lib/dropdown';
+import { Tree, Menu, Dropdown, Button, Input, Space } from 'antd';
 import MediaManagerContext from '@everyworkflow/media-manager-bundle/context/media-manager-context';
 import {
     ACTION_SET_REMOTE_MEDIA_PATH,

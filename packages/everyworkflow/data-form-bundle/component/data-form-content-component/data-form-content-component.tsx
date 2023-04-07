@@ -3,9 +3,7 @@
  */
 
 import { useContext, useCallback } from 'react';
-import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
-import Anchor from 'antd/lib/anchor';
+import { Row, Col, Anchor } from 'antd';
 import SectionRenderComponent from "@everyworkflow/data-form-bundle/component/section-render-component";
 import FieldRenderComponent from "@everyworkflow/data-form-bundle/component/field-render-component";
 import FormContext from '@everyworkflow/data-form-bundle/context/form-context';

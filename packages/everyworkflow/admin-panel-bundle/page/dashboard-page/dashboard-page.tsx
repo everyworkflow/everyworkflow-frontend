@@ -3,15 +3,13 @@
  */
 
 import { useContext, useEffect } from 'react';
-import Card from 'antd/lib/card';
-import Row from 'antd/lib/row';
-import Col from 'antd/lib/col';
-import Statistic from 'antd/lib/statistic';
+import { theme, Row, Col, Card, Statistic } from 'antd';
 import ArrowUpOutlined from '@ant-design/icons/ArrowUpOutlined';
 import PanelContext from "@everyworkflow/panel-bundle/context/panel-context";
 import { ACTION_SET_PAGE_TITLE } from "@everyworkflow/panel-bundle/reducer/panel-reducer";
 
 const DashboardPage = () => {
+    const { token } = theme.useToken();
     const { dispatch: panelDispatch } = useContext(PanelContext);
 
     useEffect(() => {
@@ -19,7 +17,9 @@ const DashboardPage = () => {
     }, [panelDispatch]);
 
     return (
-        <div className="app-container app-header-space">
+        <div style={{
+            padding: token.paddingContentHorizontalLG,
+        }}>
             <Row gutter={24} style={{ marginBottom: 24 }}>
                 <Col span={6}>
                     <Card>

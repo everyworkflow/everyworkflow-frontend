@@ -3,10 +3,7 @@
  */
 
 import { useCallback } from 'react';
-import { Header } from "antd/lib/layout/layout";
-import Menu from "antd/lib/menu";
-import Row from "antd/lib/row";
-import Col from "antd/lib/col";
+import { Layout, Row, Col, Menu } from "antd";
 import { Link } from 'react-router-dom';
 import { SearchOutlined, UserOutlined } from "@ant-design/icons";
 import MainMenuComponent from "@everyworkflow/front-panel-bundle/component/main-menu-component";
@@ -52,7 +49,7 @@ const HeaderComponent = () => {
     }, []);
 
     return (
-        <Header className="app-frontend-header">
+        <Layout.Header className="app-frontend-header">
             <div className="app-container-center">
                 <Row gutter={0} justify="space-between">
                     <Col>
@@ -77,7 +74,7 @@ const HeaderComponent = () => {
                     </Col>
                 </Row>
             </div>
-        </Header>
+        </Layout.Header>
     );
 }
 

@@ -3,10 +3,7 @@
  */
 
 import { useState } from 'react';
-import Button from 'antd/lib/button';
-import Image from 'antd/lib/image';
-import Popover from 'antd/lib/popover';
-import Space from 'antd/lib/space';
+import { Button, Space, Popover, Image } from 'antd';
 import CheckOutlined from '@ant-design/icons/CheckOutlined';
 import ProductSwatchInterface from '@everyworkflow/catalog-product-bundle/model/product-swatch-interface';
 import SwatchImageInterface from "@everyworkflow/catalog-product-bundle/model/product-swatch/swatch-image-interface";

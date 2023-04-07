@@ -2,8 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Form from 'antd/lib/form';
-import Button from 'antd/lib/button';
+import { Form, Button } from 'antd';
 import DataFormComponent from '@everyworkflow/data-form-bundle/component/data-form-component';
 
 const formData: any = {

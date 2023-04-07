@@ -3,8 +3,7 @@
  */
 
 import { useContext } from 'react';
-import Upload from 'antd/lib/upload';
-import { message } from 'antd';
+import { Upload, message } from 'antd';
 import InboxOutlined from '@ant-design/icons/InboxOutlined';
 import UrlHelper from '@everyworkflow/panel-bundle/helper/url-helper';
 import MediaManagerContext from '@everyworkflow/media-manager-bundle/context/media-manager-context';

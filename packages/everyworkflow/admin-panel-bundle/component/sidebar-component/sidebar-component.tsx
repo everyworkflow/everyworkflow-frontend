@@ -3,9 +3,8 @@
  */
 
 import { useContext, useState, useEffect, useCallback } from 'react';
-import Menu from 'antd/lib/menu';
+import { theme, Menu, Button } from 'antd';
 import { NavLink, useLocation } from 'react-router-dom';
-import Button from 'antd/lib/button';
 import { Scrollbars } from 'react-custom-scrollbars';
 import HtmlRawComponent from "@everyworkflow/panel-bundle/component/html-raw-component";
 import AdminPanelContext from "@everyworkflow/admin-panel-bundle/context/admin-panel-context";
@@ -13,6 +12,7 @@ import { ACTION_HIDE_MOBILE_APP_SIDEBAR } from '@everyworkflow/admin-panel-bundl
 import LocalStorage from '@everyworkflow/panel-bundle/service/local-storage';
 
 const SidebarComponent = () => {
+    const { token } = theme.useToken();
     const { state: adminPanelState, dispatch: adminPanelDispatch } = useContext(AdminPanelContext);
     const [sidebarData, setSidebarData] = useState<Array<any>>([]);
     const location = useLocation();
@@ -132,21 +132,28 @@ const SidebarComponent = () => {
 
     return (
         <>
-            <div className="app-sidebar-header">
-                <NavLink to={'/dashboard'} className="btn-title-navlink">
-                    <Button className="btn-title" type="text" block={true}>
+            <div>
+                <NavLink to={'/dashboard'}>
+                    <Button type="text" block={true} style={{
+                        padding: token.padding,
+                        height: 'auto',
+                        fontSize: token.fontSizeHeading4,
+                        borderRadius: 0,
+                    }}>
                         <span className="long-label"><strong>EW</strong> Admin Panel</span>
                         <span className="small-label"><strong>EW</strong></span>
                     </Button>
                 </NavLink>
             </div>
-            <div className="app-sidebar-panel">
+            <div>
                 <Scrollbars autoHide={true} style={{
-                    height: 'calc(100vh - 56px - 46px)',
+                    height: 'calc(100vh - 65px - 48px)',
                 }}>
                     {sidebarData && Array.isArray(sidebarData) && sidebarData.length > 0 && (
                         <Menu
-                            className="app-menu-active-left-side"
+                            style={{
+                                borderRight: 'none',
+                            }}
                             mode="inline"
                             items={getSidebarItems()}
                             selectedKeys={getSelectedKeys()}

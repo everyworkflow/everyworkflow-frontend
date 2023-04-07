@@ -3,9 +3,7 @@
  */
 
 import { useContext, useEffect, useState } from 'react';
-import Form from 'antd/lib/form';
-import Button from 'antd/lib/button';
-import Image from 'antd/lib/image';
+import { Form, Button, Image } from 'antd';
 import FileImageOutlined from '@ant-design/icons/FileImageOutlined';
 import MediaImageSelectorFieldInterface
     from '@everyworkflow/media-manager-bundle/model/field/media-image-selector-field-interface';
@@ -25,8 +23,10 @@ const MediaImageSelectorField = ({ fieldData, children }: MediaImageSelectorFiel
     const [isMediaSelectorEnabled, setIsMediaSelectorEnabled] = useState(false);
     const [selectedMediaPath, setSelectedMediaPath] = useState<string | undefined>(((): string | undefined => {
         if (fieldData.name && formState.initial_values[fieldData.name]) {
-            if (formState.initial_values[fieldData.name] === 'string') {
+            if (typeof formState.initial_values[fieldData.name] === 'string') {
                 return formState.initial_values[fieldData.name];
+            } else if (typeof formState.initial_values[fieldData.name]?.path_name === 'string') {
+                return formState.initial_values[fieldData.name]?.path_name;
             }
         }
         return undefined;

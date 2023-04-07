@@ -3,13 +3,7 @@
  */
 
 import { useState } from "react";
-import Col from "antd/lib/col";
-import InputNumber from "antd/lib/input-number";
-import Modal from "antd/lib/modal";
-import Row from "antd/lib/row";
-import Space from "antd/lib/space";
-import Typography from "antd/lib/typography";
-import Button from "antd/lib/button";
+import { Row, Col, Modal, Button, Space, InputNumber, Typography } from "antd";
 import Styles from "./cart-checkout.module.css";
 
 const { Title, Text } = Typography;

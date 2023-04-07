@@ -3,8 +3,7 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
-import Col from 'antd/lib/col';
-import Row from 'antd/lib/row';
+import { theme, Row, Col } from 'antd';
 import MenuItemSidebar from "@everyworkflow/menu-bundle/component/menu-editor-component/menu-item-sidebar";
 import MenuItemForm from "@everyworkflow/menu-bundle/component/menu-editor-component/menu-item-form";
 import GetMenuAfterDrop, { DROP_TYPE_AFTER, DROP_TYPE_BEFORE, DROP_TYPE_INSIDE } from '@everyworkflow/menu-bundle/component/menu-editor-component/get-menu-after-drop';
@@ -22,6 +21,7 @@ interface MenuEditorComponentProps {
 }
 
 const MenuEditorComponent = ({ initialMenuData, menuItemFormData, onMenuDataChange, onMenuSubmit }: MenuEditorComponentProps) => {
+    const { token } = theme.useToken();
     const [menuData, setMenuData] = useState<Array<any>>(initialMenuData);
     const [selectedItemIndex, setSelectedItemIndex] = useState<Array<number>>([]);
     const [insertConfig, setInsertConfig] = useState<{
@@ -142,19 +142,29 @@ const MenuEditorComponent = ({ initialMenuData, menuItemFormData, onMenuDataChan
     return (
         <>
             <div className="list-page-with-tree-sidebar" style={{
-                margin: '24px 0',
-                paddingLeft: 24,
+                marginBottom: 24,
+                paddingLeft: token.paddingContentHorizontalLG,
+                paddingRight: token.paddingContentHorizontalLG,
             }}>
-                <Row gutter={0}>
-                    <Col style={{ width: 420 }}>
-                        <MenuItemSidebar
-                            menuData={menuData}
-                            onMenuItemTreeClick={onMenuItemTreeClick}
-                            onMenuItemTreeDrop={onMenuItemTreeDrop}
-                            onTreeContextAction={onTreeContextAction}
-                        />
+                <Row gutter={24}>
+                    <Col style={{ width: 444, minHeight: 'calc(100vh - 100px)' }}>
+                        <div style={{
+                            width: 420,
+                            backgroundColor: token.colorBgBase,
+                            borderRadius: 8,
+                            padding: 8,
+                            position: 'absolute',
+                            minHeight: 'calc(100vh - 100px)'
+                        }}>
+                            <MenuItemSidebar
+                                menuData={menuData}
+                                onMenuItemTreeClick={onMenuItemTreeClick}
+                                onMenuItemTreeDrop={onMenuItemTreeDrop}
+                                onTreeContextAction={onTreeContextAction}
+                            />
+                        </div>
                     </Col>
-                    <Col flex="auto" style={{ width: 'calc(100% - 420px)' }}>
+                    <Col flex="auto">
                         <MenuItemForm
                             menuItemFormData={menuItemFormData}
                             insertConfig={insertConfig}

@@ -3,12 +3,8 @@
  */
 
 import { useCallback, useContext } from 'react';
+import { theme, Col, Badge, Button, Space, Tooltip } from 'antd';
 import { useLocation } from 'react-router-dom';
-import Col from 'antd/lib/col';
-import Space from 'antd/lib/space';
-import Button from 'antd/lib/button';
-import Tooltip from 'antd/lib/tooltip';
-import Badge from "antd/lib/badge";
 import ControlOutlined from '@ant-design/icons/ControlOutlined';
 import FilterOutlined from '@ant-design/icons/FilterOutlined';
 import BreadcrumbComponent from '@everyworkflow/admin-panel-bundle/component/breadcrumb-component';
@@ -26,6 +22,7 @@ interface PageWrapperComponentProps {
 }
 
 const PageWrapperComponent = ({ children }: PageWrapperComponentProps) => {
+    const { token } = theme.useToken();
     const location = useLocation();
     const { state: gridState, dispatch: gridDispatch } = useContext(
         DataGridContext
@@ -126,7 +123,10 @@ const PageWrapperComponent = ({ children }: PageWrapperComponentProps) => {
                 </>
             </PageHeaderComponent>
             <BreadcrumbComponent />
-            <div className="app-container app-footer-space">{children}</div>
+            <div style={{
+                paddingLeft: token.paddingContentHorizontalLG,
+                paddingRight: token.paddingContentHorizontalLG,
+            }}>{children}</div>
         </>
     );
 };

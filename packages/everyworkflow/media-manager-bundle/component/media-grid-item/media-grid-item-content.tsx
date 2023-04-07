@@ -2,7 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Image from 'antd/lib/image';
+import { Image } from 'antd';
 import MediaIconHelper from '@everyworkflow/media-manager-bundle/helper/media-icon-helper';
 import UrlHelper from "@everyworkflow/panel-bundle/helper/url-helper";
 

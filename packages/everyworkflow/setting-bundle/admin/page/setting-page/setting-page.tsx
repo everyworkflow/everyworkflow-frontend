@@ -3,8 +3,7 @@
  */
 
 import { useContext, useEffect } from 'react';
-import Row from "antd/lib/row";
-import Col from "antd/lib/col";
+import { Row, Col } from "antd";
 import PanelContext from "@everyworkflow/panel-bundle/context/panel-context";
 import { ACTION_SET_PAGE_TITLE } from "@everyworkflow/panel-bundle/reducer/panel-reducer";
 import { ACTION_HIDE_FOOTER, ACTION_SHOW_FOOTER } from '@everyworkflow/admin-panel-bundle/reducer/admin-panel-reducer';
@@ -25,12 +24,12 @@ const SettingPage = () => {
     }, [panelDispatch]);
 
     return (
-        <div className="list-page-with-sidebar">
-            <Row gutter={0}>
-                <Col>
+        <div className="list-page-with-sidebar" style={{ paddingRight: 24 }}>
+            <Row gutter={24}>
+                <Col style={{ flexShrink: 1 }}>
                     <SettingSidebar />
                 </Col>
-                <Col flex="auto" style={{ width: 'calc(100% - 420px)' }}>
+                <Col flex="auto">
                     <SettingForm />
                 </Col>
             </Row>

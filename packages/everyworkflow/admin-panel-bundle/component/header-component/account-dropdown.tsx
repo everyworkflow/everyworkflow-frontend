@@ -3,10 +3,7 @@
  */
 
 import { useCallback, useContext, useState, useEffect } from 'react';
-import Dropdown from 'antd/lib/dropdown';
-import Menu from 'antd/lib/menu';
-import Avatar from 'antd/lib/avatar';
-import Button from 'antd/lib/button';
+import { theme, Dropdown, Avatar, Button } from 'antd';
 import jwtDecode, { JwtPayload } from 'jwt-decode';
 import { NavLink, useNavigate } from 'react-router-dom';
 import UserOutlined from '@ant-design/icons/UserOutlined';
@@ -20,6 +17,7 @@ import ThemeSwitcher from '@everyworkflow/admin-panel-bundle/component/header-co
 import PanelConfig from '@everyworkflow/panel-bundle/config/panel-config';
 
 const AccountDropdown = () => {
+    const { token } = theme.useToken();
     const { dispatch: panelDispatch } = useContext(PanelContext);
     const [userData, setUserData] = useState<any>();
     const navigate = useNavigate();
@@ -43,16 +41,26 @@ const AccountDropdown = () => {
         }
 
         return (
-            <div className="app-account-panel-profile-section">
-                <div className="profile-section-header">
+            <div style={{
+                textAlign: 'center',
+                padding: token.paddingContentVerticalSM,
+            }}>
+                <div style={{
+                    marginBottom: token.marginSM,
+                }}>
                     <Avatar
                         src={userData.profile_image}
                         alt={'Account Icon'}
                         icon={<UserOutlined />}
                         size={64} />
                 </div>
-                <div style={{ fontWeight: 'bold' }}>{userData.first_name + ' ' + userData.last_name}</div>
-                <div style={{ fontSize: 14 }}>{userData.username}</div>
+                <div style={{
+                    fontWeight: 'bold',
+                    color: token.colorText,
+                }}>{userData.first_name + ' ' + userData.last_name}</div>
+                <div style={{
+                    fontSize: 14,
+                }}>{userData.username}</div>
             </div>
         );
     }
@@ -61,12 +69,14 @@ const AccountDropdown = () => {
         return [
             {
                 key: 'render-user-account-section',
+                type: 'group',
                 style: {
-                    padding: 0,
-                    cursor: 'default',
-                    pointerEvents: 'none',
+                    color: token.colorText,
                 },
                 label: renderUserAccountSection(),
+            },
+            {
+                type: 'divider',
             },
             {
                 key: 'my-profile',
@@ -138,14 +148,9 @@ const AccountDropdown = () => {
     return (
         <>
             <Dropdown
-                overlay={(
-                    <Menu
-                        style={{
-                            paddingTop: 0,
-                        }}
-                        items={getMenuItems()}
-                    />
-                )}
+                menu={{
+                    items: getMenuItems(),
+                }}
                 trigger={['click']}>
                 <Button
                     icon={<UserOutlined />}

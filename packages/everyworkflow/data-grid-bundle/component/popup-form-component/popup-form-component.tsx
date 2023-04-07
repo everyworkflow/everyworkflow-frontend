@@ -3,7 +3,7 @@
  */
 
 import { useEffect, useContext, useState } from 'react';
-import Form from 'antd/lib/form';
+import { Form } from 'antd';
 import SidePanelComponent from '@everyworkflow/panel-bundle/component/side-panel-component';
 import { PANEL_SIZE_FULL } from '@everyworkflow/panel-bundle/component/side-panel-component/side-panel-component';
 import DataForm from '@everyworkflow/data-form-bundle/component/data-form-component';

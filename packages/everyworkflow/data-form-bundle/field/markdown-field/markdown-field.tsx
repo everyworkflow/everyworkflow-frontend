@@ -3,7 +3,7 @@
  */
 
 import { useState, useCallback, useMemo, useContext } from 'react';
-import Form from 'antd/lib/form';
+import { Form } from 'antd';
 import TextareaFieldInterface from '@everyworkflow/data-form-bundle/model/field/textarea-field-interface';
 import MediaPanelComponent from "@everyworkflow/media-manager-bundle/component/media-panel-component";
 import { MEDIA_MANAGER_TYPE_SINGLE_SELECT } from "@everyworkflow/media-manager-bundle/component/media-manager-component/media-manager-component";

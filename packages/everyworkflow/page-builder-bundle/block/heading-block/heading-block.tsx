@@ -3,7 +3,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import Typography from "antd/lib/typography";
+import { Typography } from "antd";
 import StyleHelper from "@everyworkflow/panel-bundle/helper/style-helper";
 import HeadingBlockInterface from "@everyworkflow/page-builder-bundle/model/block/heading-block-interface";
 import BlockWrapperComponent from "@everyworkflow/page-builder-bundle/component/block-wrapper-component";
@@ -37,7 +37,7 @@ const HeadingBlock = ({ indexes, blockData, mode }: HeadingBlockProps) => {
             <BlockWrapperComponent indexes={indexes} blockData={blockData} mode={mode}>
                 <Typography.Title
                     className={blockData.class_name}
-                    style={StyleHelper.remoteStyleParse(blockData.style)}
+                    style={StyleHelper.remoteStyleParse(blockData.use_style)}
                     level={headingLevel}>
                     {blockData.content}
                 </Typography.Title>

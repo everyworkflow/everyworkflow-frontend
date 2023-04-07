@@ -2,8 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Card from 'antd/lib/card';
-import Image from 'antd/lib/image';
+import { Card, Image } from 'antd';
 
 const ProductCardComponent = ({ item }: { item: any }) => (
     <Card

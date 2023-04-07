@@ -2,7 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Select from 'antd/lib/select';
+import { Select } from 'antd';
 
 interface ProductSelectComponentProps {
     label?: string;

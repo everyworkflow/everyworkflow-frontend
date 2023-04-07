@@ -2,8 +2,7 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import Space from "antd/lib/space";
-import Button from "antd/lib/button";
+import { Button, Space } from "antd";
 import Link from "next/link";
 
 const FooterBottomComponent = () => {

@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import Col from "antd/lib/col";
+import { Col } from "antd";
 import StyleHelper from "@everyworkflow/panel-bundle/helper/style-helper";
 import RenderBlockComponent from "@everyworkflow/page-builder-bundle/component/render-block-component";
 import ColBlockInterface from "@everyworkflow/page-builder-bundle/model/block/col-block-interface";
