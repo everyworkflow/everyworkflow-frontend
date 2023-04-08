@@ -57,7 +57,7 @@ const PageHeaderComponent = ({
                     backgroundColor: token.colorBgBase,
                     position: isSticky ? 'sticky' : 'initial',
                     boxShadow: token.boxShadow,
-                    zIndex: 1,
+                    zIndex: 5,
                     top: 0,
                     ...style,
                 }}>

@@ -11,6 +11,7 @@ import { pageBuilderState } from "@everyworkflow/page-builder-bundle/state/page-
 import BlockInterface from "@everyworkflow/page-builder-bundle/model/block-interface";
 import AddBlockInPageComponent from "@everyworkflow/page-builder-bundle/component/add-block-in-page-component";
 import DropBlockComponent from "@everyworkflow/page-builder-bundle/component/drop-block-component";
+import '@everyworkflow/page-builder-bundle/style.css';
 
 export const MODE_VIEW = 'view';
 export const MODE_EDIT = 'edit';

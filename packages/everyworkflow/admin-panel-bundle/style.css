@@ -1,0 +1,12 @@
+.app-container {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+

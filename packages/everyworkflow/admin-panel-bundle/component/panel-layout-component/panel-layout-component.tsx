@@ -66,7 +66,7 @@ const PanelLayoutComponent = ({ children }: PanelLayoutComponentProps) => {
                 width={256}
                 theme="light"
                 style={{
-                    zIndex: 2,
+                    zIndex: 6,
                 }}>
                 <div ref={sidebarRef}>
                     <div style={{

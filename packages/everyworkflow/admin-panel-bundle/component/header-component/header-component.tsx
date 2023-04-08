@@ -32,7 +32,7 @@ const HeaderComponent = () => {
                     boxShadow: token.boxShadow,
                     position: 'sticky',
                     top: 0,
-                    zIndex: 1,
+                    zIndex: 5,
                 }}>
                 <Layout.Header style={{
                     backgroundColor: token.colorBgBase,

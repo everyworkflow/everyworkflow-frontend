@@ -1,0 +1,104 @@
+.page-builder-drop-block {
+    position: relative;
+}
+.page-builder-drop-block .dropbox {
+    background-color: #000000;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: -14px;
+    height: 26px;
+    z-index: 2;
+    left: 0;
+}
+.page-builder-drop-block .dropbox-content {
+    position: absolute;
+    padding-top: 3px;
+    width: 100%;
+    top: -14px;
+    height: 26px;
+    z-index: 1;
+    left: 0;
+}
+.page-builder-drop-block .dropbox-content .dropbox-content-text {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+.page-builder-drop-block .dropbox.vertical {
+    height: 118px;
+    margin-top: 2px;
+    width: 22px;
+    left: -11px;
+    top: 0;
+}
+.page-builder-drop-block .dropbox-content.vertical {
+    left: -11px;
+    top: 0;
+}
+.page-builder-drop-block
+    .dropbox-content.vertical
+    .dropbox-content-text.vertical {
+    writing-mode: tb;
+    transform: rotate(180deg);
+    padding: 6px 0;
+}
+.page-builder-debug-box {
+    border: dashed 1px #b0413e;
+    padding: 24px;
+    position: relative;
+}
+.page-builder-debug-box .page-builder-block-title {
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    border: dashed 1px #b0413e;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 11px;
+    cursor: move;
+    text-transform: capitalize;
+    z-index: 1;
+}
+.page-builder-debug-box .page-builder-block-title.drag-able:hover,
+.page-builder-debug-box .page-builder-block-title.drag-able:focus {
+    z-index: 100;
+}
+.page-builder-debug-box .page-builder-block-actions {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    display: none;
+    padding: 16px 8px;
+    z-index: 1;
+}
+.page-builder-debug-box .page-builder-block-actions:hover {
+    z-index: 100;
+}
+.page-builder-debug-box .page-builder-block-actions .addition-item {
+    display: none;
+}
+.page-builder-debug-box .page-builder-add-block-wrapper {
+    text-align: center;
+    margin-top: 24px;
+}
+.page-builder-debug-box:hover > .page-builder-block-actions {
+    display: flex;
+}
+.page-builder-debug-box:hover
+    > .page-builder-block-actions:hover
+    .addition-item {
+    display: inline;
+}
+.flip-icon {
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+}
+body[data-theme="dark"] .page-builder-debug-box .page-builder-block-title {
+    background-color: black;
+}
+
