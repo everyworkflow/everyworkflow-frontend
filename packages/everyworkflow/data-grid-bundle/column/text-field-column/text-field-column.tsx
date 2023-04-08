@@ -11,7 +11,11 @@ interface TextFieldColumnProps {
 }
 
 const TextFieldColumn = ({ fieldData, fieldValue }: TextFieldColumnProps) => {
-    if (fieldValue !== undefined && typeof fieldValue !== 'string') {
+    console.log({
+        fieldValue: fieldValue,
+        type: typeof fieldValue,
+    });
+    if (fieldValue !== undefined && typeof fieldValue !== 'string' && typeof fieldValue !== 'number') {
         return <span>{typeof fieldValue}</span>;
     }
     return <span>{fieldValue}</span>;
