@@ -1,6 +1,6 @@
-# EveryWorkflow Platform Frontend
+# EveryWorkflow Frontend
 
-Turbo repo for EveryWorkflow Platform Frontend
+Turbo repo for EveryWorkflow Frontend
 
 
 ## Quick startup
@@ -12,4 +12,10 @@ Then,
 - Clone repo
 - yarn install
 - yarn dev
+
+## Apps
+
+- Admin Panel
+- Front Panel
+- Store Panel
 
