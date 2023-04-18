@@ -58,7 +58,7 @@ const HeaderComponent = () => {
                         </Link>
                     </Col>
                     <Col style={{ flexGrow: 1 }}>
-                        <MainMenuComponent menuCode={'frontend_menu'} />
+                        <MainMenuComponent menuCode={'front_panel_menu'} />
                     </Col>
                     <Col style={{ flexGrow: 1, flex: 1 }}>
                         <Menu

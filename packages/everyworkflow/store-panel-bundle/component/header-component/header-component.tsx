@@ -23,7 +23,7 @@ const HeaderComponent = () => {
                         <Col style={{
                             flexGrow: 1,
                         }}>
-                            <MainMenuComponent menuCode={'store_front'} />
+                            <MainMenuComponent menuCode={'store_panel_menu'} />
                         </Col>
                         <Col span={4}>
                             <Menu
