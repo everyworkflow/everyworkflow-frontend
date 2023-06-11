@@ -1,0 +1,8 @@
+.app-attribute-group-form-section .group-section {
+    max-height: calc(100vh - 240px);
+    overflow-y: auto;
+    padding-top: var(--size);
+    padding-bottom: var(--size);
+    padding-left: var(--sizeXL);
+    padding-right: var(--sizeXL);
+}

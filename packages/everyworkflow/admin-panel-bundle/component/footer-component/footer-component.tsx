@@ -2,13 +2,18 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
+import { Row, Col, Typography } from 'antd';
+import PanelConfig from "@everyworkflow/panel-bundle/config/panel-config";
+
 const FooterComponent = () => {
+    const projectName: string = PanelConfig.PROJECT_NAME ?? 'EveryWorkflow';
+
     return (
         <div className="app-container app-panel-footer">
-            <div>
-                <div>
-                    <p>
-                        Copyright © EveryWorkflow. All rights reserved. <br />
+            <Row>
+                <Col sm={24} md={12}>
+                    <Typography.Paragraph>
+                        Copyright © {projectName}. All rights reserved. <br />
                         <small>
                             Powered by:{' '}
                             <a
@@ -18,10 +23,10 @@ const FooterComponent = () => {
                                 EveryWorkflow
                             </a>
                         </small>
-                    </p>
-                </div>
-                <div>
-                    <p>
+                    </Typography.Paragraph>
+                </Col>
+                <Col sm={24} md={12} style={{ textAlign: 'right' }}>
+                    <Typography.Paragraph>
                         <strong>v0.1.0-alpha</strong> <br />
                         <small>
                             <a
@@ -31,9 +36,9 @@ const FooterComponent = () => {
                                 Report an issue?
                             </a>
                         </small>
-                    </p>
-                </div>
-            </div>
+                    </Typography.Paragraph>
+                </Col>
+            </Row>
         </div>
     );
 };

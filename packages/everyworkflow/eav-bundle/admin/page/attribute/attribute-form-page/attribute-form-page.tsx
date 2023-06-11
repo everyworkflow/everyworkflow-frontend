@@ -15,7 +15,7 @@ const AttributeFormPage = () => {
             primaryKeyLabel="Code"
             formSectionMaps={{
                 attribute_select_options: lazy(
-                    () => import('@everyworkflow/eav-bundle/admin/page/attribute/attribute-form-page/options-form-section')
+                    () => import('@everyworkflow/eav-bundle/section/attribute-options-section')
                 )
             }}
         />

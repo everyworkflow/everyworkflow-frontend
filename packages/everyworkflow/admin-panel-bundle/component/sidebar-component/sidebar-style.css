@@ -1,0 +1,76 @@
+.app-layout .ant-layout-sider .app-header-brand {
+    padding: var(--sizeXS)
+}
+
+.app-layout .ant-layout-sider .app-header-brand .ant-btn {
+    height: auto;
+    padding: var(--sizeXS);
+    border-radius: var(--borderRadius);
+    font-size: var(--fontSizeHeading4);
+}
+
+.app-layout .ant-layout-sider .app-header-brand .long-label {
+    display: block;
+}
+
+.app-layout .ant-layout-sider .app-header-brand .small-label {
+    display: none;
+}
+
+.app-layout .ant-layout-sider.ant-layout-sider-collapsed .app-header-brand .long-label {
+    display: none;
+}
+
+.app-layout .ant-layout-sider.ant-layout-sider-collapsed .app-header-brand .small-label {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .app-layout .ant-layout-sider .app-header-brand .long-label {
+        display: block;
+    }
+
+    .app-layout .ant-layout-sider .app-header-brand .small-label {
+        display: none;
+    }
+}
+
+.app-layout .ant-layout-sider .app-main-sidebar .ant-menu {
+    border-right: none;
+    padding-left: var(--sizeXXS);
+    padding-right: var(--sizeXXS);
+}
+
+.app-layout .ant-layout-sider.ant-layout-sider-collapsed .app-main-sidebar .ant-menu {
+    padding: 0;
+}
+
+.app-layout .ant-layout-sider .app-main-sidebar .ant-menu .ant-menu-submenu .ant-menu-submenu-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.app-layout .ant-layout-sider .app-main-sidebar .ant-menu .ant-menu-submenu .ant-menu-item-icon svg {
+    display: block;
+}
+
+.app-layout .ant-layout-sider.ant-layout-sider-collapsed .app-main-sidebar .ant-menu .ant-menu-submenu .ant-menu-title-content {
+    display: none;
+}
+
+.app-layout .ant-layout-sider .app-main-sidebar .ant-menu .ant-menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.app-layout .ant-layout-sider .app-main-sidebar .ant-menu .ant-menu-item .ant-menu-item-icon svg {
+    display: block;
+}
+
+.app-layout .ant-layout-sider.ant-layout-sider-collapsed .app-main-sidebar .ant-menu .ant-menu-item .ant-menu-title-content {
+    display: none;
+}

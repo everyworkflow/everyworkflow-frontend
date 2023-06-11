@@ -8,7 +8,7 @@ import PanelContext from "@everyworkflow/panel-bundle/context/panel-context";
 import { ACTION_SET_PAGE_TITLE } from "@everyworkflow/panel-bundle/reducer/panel-reducer";
 import DataGridComponent from "@everyworkflow/data-grid-bundle/component/data-grid-component";
 import { DATA_GRID_TYPE_PAGE } from "@everyworkflow/data-grid-bundle/component/data-grid-component/data-grid-component";
-import EntityCodeColumn from '@everyworkflow/eav-bundle/admin/page/attribute/attribute-list-page/entity-code-column';
+import EntityCodeColumn from '@everyworkflow/eav-bundle/column/entity-code-column';
 
 const AttributeListPage = () => {
     const { dispatch: panelDispatch } = useContext(PanelContext);

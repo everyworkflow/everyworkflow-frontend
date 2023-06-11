@@ -46,20 +46,27 @@ const ScopePage = () => {
                 ]}
                 style={{ marginBottom: 24 }}
             />
-            <div className="list-page-with-tree-sidebar" style={{
-                marginBottom: 24,
-                paddingLeft: token.paddingContentHorizontalLG,
-                paddingRight: token.paddingContentHorizontalLG,
-            }}>
+            <div
+                className="list-page-with-tree-sidebar"
+                style={{
+                    marginBottom: token.paddingContentHorizontalLG,
+                    paddingLeft: token.paddingContentHorizontalLG,
+                    paddingRight: token.paddingContentHorizontalLG,
+                }}>
                 <Row gutter={24}>
-                    <Col style={{ width: 444, minHeight: 'calc(100vh - 100px)' }}>
+                    <Col
+                        style={{
+                            width: 444,
+                            minHeight: 'calc(100vh - 100px)',
+                        }}>
                         <div style={{
-                            width: 420,
-                            backgroundColor: token.colorBgBase,
+                            backgroundColor: token.colorBgContainer,
+                            boxShadow: token.boxShadowTertiary,
+                            minHeight: 'calc(100vh - 100px)',
+                            position: 'absolute',
                             borderRadius: 8,
                             padding: 8,
-                            position: 'absolute',
-                            minHeight: 'calc(100vh - 100px)'
+                            width: 420,
                         }}>
                             <ScopeSidebar />
                         </div>

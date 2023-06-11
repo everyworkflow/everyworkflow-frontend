@@ -3,7 +3,7 @@
  */
 
 import { useCallback } from 'react';
-import { Tabs } from 'antd';
+import { theme, Tabs } from 'antd';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 interface FormMenuTabItem {
@@ -16,6 +16,7 @@ interface FormMenuTabComponentProps {
 }
 
 const FormMenuTabComponent = ({ tabData }: FormMenuTabComponentProps) => {
+    const { token } = theme.useToken();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -31,7 +32,11 @@ const FormMenuTabComponent = ({ tabData }: FormMenuTabComponentProps) => {
     }, [tabData]);
 
     return (
-        <div className="app-header-menu-tabs-panel">
+        <div
+            className="app-header-menu-tabs-panel"
+            style={{
+                backgroundColor: token.colorBgContainer,
+            }}>
             <Tabs
                 defaultActiveKey={location.pathname}
                 centered={true}

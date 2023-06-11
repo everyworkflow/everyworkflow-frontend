@@ -3,7 +3,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { Tree, Dropdown, Menu, Popconfirm } from 'antd';
+import { theme, Tree, Dropdown, Menu, Popconfirm } from 'antd';
 
 interface MenuItemSidebarProps {
     menuData?: Array<any>;
@@ -18,6 +18,7 @@ const MenuItemSidebar = ({
     onMenuItemTreeDrop,
     onTreeContextAction
 }: MenuItemSidebarProps) => {
+    const { token } = theme.useToken();
     const [treeData, setTreeData] = useState<Array<any>>([]);
 
     useEffect(() => {
@@ -39,7 +40,10 @@ const MenuItemSidebar = ({
     }, [menuData]);
 
     return (
-        <div className="tree-sidebar tree-sidebar-inline">
+        <div className="tree-sidebar tree-sidebar-inline"
+            style={{
+                padding: token.padding,
+            }}>
             <Tree
                 onClick={(_, node: any) => {
                     if (onMenuItemTreeClick) {

@@ -1,0 +1,22 @@
+.app-layout .ant-layout-sider {
+    z-index: 6;
+}
+
+.app-layout .ant-layout-sider.ant-layout-sider-collapsed {
+    width: 80px;
+}
+
+.app-layout .ant-layout-sider .app-sidebar .sidebar-wrapper {
+    max-height: calc(100vh - 48px);
+    position: fixed;
+    width: 256px;
+}
+
+.app-layout .ant-layout-sider.ant-layout-sider-collapsed .app-sidebar .sidebar-wrapper {
+    width: 80px;
+}
+
+.app-layout .ant-layout-content .app-main {
+    min-height: calc(100vh - 62px);
+}
+

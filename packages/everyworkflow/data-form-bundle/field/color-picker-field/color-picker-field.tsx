@@ -61,7 +61,7 @@ const ColorPickerField = ({ fieldData, onChange, children }: ColorPickerFieldPro
                 } : undefined}
                 name={fieldData.name}
                 label={fieldData.label}
-                initialValue={(fieldData.name && formState.initial_values[fieldData.name]) ? formState.initial_values[fieldData.name] : undefined}
+                initialValue={(fieldData.name && formState.initial_values && formState.initial_values[fieldData.name]) ? formState.initial_values[fieldData.name] : undefined}
                 validateStatus={getErrorMessage() ? 'error' : undefined}
                 help={getErrorMessage()}
                 rules={[{ required: fieldData.is_required }]}>

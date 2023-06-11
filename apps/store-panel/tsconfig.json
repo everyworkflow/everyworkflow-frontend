@@ -1,25 +1,45 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@everyworkflow/panel-bundle/config/panel-config": [
-                "./../../packages/everyworkflow/next-panel-bundle/config/panel-config"
-            ],
-            "@everyworkflow/data-form-bundle/root/data-form-field-maps": [
-                "./../../packages/everyworkflow/next-panel-bundle/root/data-form-field-maps"
-            ],
-            "react-router-dom": [
-                "./../../packages/everyworkflow/next-panel-bundle/overwrite/react-router-dom"
-            ]
-        }
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@everyworkflow/panel-bundle/config/panel-config": [
+        "./../../packages/everyworkflow/next-panel-bundle/config/panel-config"
+      ],
+      "@everyworkflow/data-form-bundle/root/data-form-field-maps": [
+        "./../../packages/everyworkflow/next-panel-bundle/root/data-form-field-maps"
+      ],
+      "react-router-dom": [
+        "./../../packages/everyworkflow/next-panel-bundle/overwrite/react-router-dom"
+      ]
     },
-    "extends": "tsconfig/nextjs.json",
-    "include": [
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx"
-    ],
-    "exclude": [
-        "node_modules"
+    "plugins": [
+      {
+        "name": "next"
+      }
     ]
+  },
+  "extends": "tsconfig/nextjs.json",
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

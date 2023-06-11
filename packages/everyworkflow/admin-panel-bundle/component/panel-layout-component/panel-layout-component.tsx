@@ -3,7 +3,7 @@
  */
 
 import { useContext, useEffect, useRef, useState } from 'react';
-import { Layout } from 'antd';
+import { theme, Layout } from 'antd';
 import { useClickAway } from "ahooks";
 import Remote from "@everyworkflow/panel-bundle/service/remote";
 import AdminPanelContext from "@everyworkflow/admin-panel-bundle/context/admin-panel-context";
@@ -15,12 +15,14 @@ import HeaderComponent from "@everyworkflow/admin-panel-bundle/component/header-
 import FooterComponent from "@everyworkflow/admin-panel-bundle/component/footer-component";
 import SidebarComponent from "@everyworkflow/admin-panel-bundle/component/sidebar-component";
 import LocalStorage from '@everyworkflow/panel-bundle/service/local-storage';
+import '@everyworkflow/admin-panel-bundle/component/panel-layout-component/panel-layout-style.css';
 
 interface PanelLayoutComponentProps {
     children?: JSX.Element | JSX.Element[];
 }
 
 const PanelLayoutComponent = ({ children }: PanelLayoutComponentProps) => {
+    const {token} = theme.useToken();
     const { state, dispatch } = useContext(AdminPanelContext);
     const [isPanelLoaded, setPanelLoaded] = useState(false);
     const [isMainSidebarCollapsed, setIsMainSidebarCollapsed] = useState(false);
@@ -49,7 +51,7 @@ const PanelLayoutComponent = ({ children }: PanelLayoutComponentProps) => {
     }, [dispatch]);
 
     const onMainSidebarCollapseClick = (value: boolean) => {
-        LocalStorage.set('is_main_sidebar_collapsed', value, false);
+        LocalStorage.set("is_main_sidebar_collapsed", value);
         setIsMainSidebarCollapsed(value);
     }
 
@@ -60,20 +62,18 @@ const PanelLayoutComponent = ({ children }: PanelLayoutComponentProps) => {
     }, [sidebarRef, () => document.getElementById('btn-app-main-menu')]);
 
     return (
-        <Layout>
+        <Layout className="app-layout">
             <Layout.Sider
-                collapsible collapsed={isMainSidebarCollapsed} onCollapse={onMainSidebarCollapseClick}
                 width={256}
+                collapsible
+                collapsed={isMainSidebarCollapsed}
+                onCollapse={onMainSidebarCollapseClick}
                 theme="light"
                 style={{
-                    zIndex: 6,
+                    boxShadow: token.boxShadowTertiary,
                 }}>
-                <div ref={sidebarRef}>
-                    <div style={{
-                        maxHeight: 'calc(100vh - 48px)',
-                        position: 'fixed',
-                        width: 256,
-                    }}>
+                <div className="app-sidebar" ref={sidebarRef}>
+                    <div className="sidebar-wrapper">
                         <SidebarComponent />
                     </div>
                 </div>
@@ -83,10 +83,7 @@ const PanelLayoutComponent = ({ children }: PanelLayoutComponentProps) => {
                 overflow: 'hidden',
             } : undefined}>
                 <HeaderComponent />
-                <div style={{
-                    minHeight: 'calc(100vh - 62px)',
-                    // paddingBottom: 24,
-                }}>
+                <div className="app-main">
                     {isPanelLoaded && children}
                 </div>
                 {!state.hide_footer && <FooterComponent />}

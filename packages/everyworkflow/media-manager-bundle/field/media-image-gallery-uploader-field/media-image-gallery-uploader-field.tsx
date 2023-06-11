@@ -40,7 +40,7 @@ const MediaImageGalleryUploaderField = ({ fieldData, children }: MediaImageGalle
     const [mediaItemConfigPath, setMediaItemConfigPath] = useState<string | undefined>(undefined);
     const [previewItem, setPreviewItem] = useState<PreviewImageInterface | undefined>(undefined);
     const [selectedMediaItems, setSelectedMediaItems] = useState<Array<SelectedMediaItemInterface>>(((): Array<SelectedMediaItemInterface> => {
-        if (fieldData.name && formState.initial_values[fieldData.name]) {
+        if (fieldData.name && formState.initial_values && formState.initial_values[fieldData.name]) {
             if (formState.initial_values[fieldData.name] === 'string') {
                 return JSON.parse(formState.initial_values[fieldData.name]);
             } else {
@@ -105,7 +105,7 @@ const MediaImageGalleryUploaderField = ({ fieldData, children }: MediaImageGalle
                 } : undefined}
                 name={fieldData.name}
                 label={fieldData.label}
-                initialValue={(fieldData.name && formState.initial_values[fieldData.name]) ? formState.initial_values[fieldData.name] : undefined}
+                initialValue={(fieldData.name && formState.initial_values && formState.initial_values[fieldData.name]) ? formState.initial_values[fieldData.name] : undefined}
                 rules={[{ required: fieldData.is_required }]}>
                 <>
                     {getSortableList()?.length > 0 && (

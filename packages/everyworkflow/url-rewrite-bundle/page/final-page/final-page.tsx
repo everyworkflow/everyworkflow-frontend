@@ -37,8 +37,8 @@ const FinalPage = () => {
         }
         return (
             <>
-                {(data && !!data.page_builder_data) ? (
-                    <PageBuilderComponent pageBuilderData={data.page_builder_data} />
+                {(data && !!data.item && !!data.item.page_builder_data) ? (
+                    <PageBuilderComponent pageBuilderData={data.item.page_builder_data} />
                 ) : <Error404Component />}
             </>
         );

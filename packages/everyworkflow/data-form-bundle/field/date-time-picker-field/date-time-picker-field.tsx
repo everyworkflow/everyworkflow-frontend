@@ -43,7 +43,7 @@ const DateTimePickerField = ({ fieldData, onChange, children }: DateTimePickerFi
                 name={fieldData.name}
                 label={fieldData.label}
                 initialValue={(() => {
-                    if (fieldData.name && formState.initial_values[fieldData.name]) {
+                    if (fieldData.name && formState.initial_values && formState.initial_values[fieldData.name]) {
                         if (fieldData.is_readonly) {
                             return formState.initial_values[fieldData.name];
                         }

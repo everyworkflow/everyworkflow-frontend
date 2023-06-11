@@ -4,9 +4,12 @@
 
 const LocalStorage = {
     get: (key: string, isJson = true): any => {
+        if (typeof window === 'undefined') {
+            return undefined;
+        }
         if (isJson) {
             try {
-                const jsonData = JSON.parse(localStorage.getItem(key) ?? '');
+                const jsonData = JSON.parse(window?.localStorage?.getItem(key) ?? '');
                 return jsonData;
             } catch (error: any) {
                 // Ignore error is unable to parse data
@@ -16,18 +19,28 @@ const LocalStorage = {
         }
         return localStorage.getItem(key);
     },
-    set: (key: string, value: string | any, isJson = true): void => {
-        if (typeof value !== 'string' && isJson) {
+    set: (key: string, value: string | any): void => {
+        if (typeof window === 'undefined') {
+            return;
+        }
+        if (typeof value !== 'string') {
             value = JSON.stringify(value);
         }
-        localStorage.setItem(key, value);
+        window?.localStorage?.setItem(key, value);
     },
     remove: (key: string): void => {
-        localStorage.removeItem(key);
+        if (typeof window === 'undefined') {
+            return;
+        }
+        window?.localStorage?.removeItem(key);
     },
     clear: (): void => {
-        localStorage.clear();
+        if (typeof window === 'undefined') {
+            return;
+        }
+        window?.localStorage?.clear();
     },
 };
 
 export default LocalStorage;
+

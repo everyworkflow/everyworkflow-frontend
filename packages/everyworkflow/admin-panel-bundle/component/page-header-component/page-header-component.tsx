@@ -54,15 +54,15 @@ const PageHeaderComponent = ({
         <>
             <div
                 style={{
-                    backgroundColor: token.colorBgBase,
+                    backgroundColor: token.colorBgContainer,
                     position: isSticky ? 'sticky' : 'initial',
-                    boxShadow: token.boxShadow,
+                    boxShadow: token.boxShadowTertiary,
                     zIndex: 5,
                     top: 0,
                     ...style,
                 }}>
                 <Layout.Header style={{
-                    backgroundColor: token.colorBgBase,
+                    backgroundColor: token.colorBgContainer,
                     zIndex: 5,
                     paddingLeft: token.paddingContentHorizontalLG,
                     paddingRight: token.paddingContentHorizontalLG,

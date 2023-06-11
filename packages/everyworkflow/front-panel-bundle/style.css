@@ -1,0 +1,14 @@
+.app-container-center {
+    padding-right: 24px;
+    padding-left: 24px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .app-container-center {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+

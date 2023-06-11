@@ -33,16 +33,21 @@ const HeadingBlock = ({ indexes, blockData, mode }: HeadingBlockProps) => {
     }, [blockData]);
 
     return (
-        <>
-            <BlockWrapperComponent indexes={indexes} blockData={blockData} mode={mode}>
-                <Typography.Title
-                    className={blockData.class_name}
-                    style={StyleHelper.remoteStyleParse(blockData.use_style)}
-                    level={headingLevel}>
-                    {blockData.content}
-                </Typography.Title>
-            </BlockWrapperComponent>
-        </>
+      <>
+        <BlockWrapperComponent
+          indexes={indexes}
+          blockData={blockData}
+          mode={mode}
+        >
+          <Typography.Title
+            className={blockData.class_name}
+            style={StyleHelper.remoteStyleParse(blockData?.style)}
+            level={headingLevel}
+          >
+            {blockData.content}
+          </Typography.Title>
+        </BlockWrapperComponent>
+      </>
     );
 }
 

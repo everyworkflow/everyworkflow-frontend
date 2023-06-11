@@ -16,7 +16,7 @@ interface RadioFieldProps extends DynamicFieldPropsInterface {
 
 const RadioField = ({ fieldData, onChange, children }: RadioFieldProps) => {
     const { state: formState } = useContext(FormContext);
-    const [value, setValue] = useState((fieldData.name && formState.initial_values[fieldData.name]) ? formState.initial_values[fieldData.name] : '');
+    const [value, setValue] = useState((fieldData.name && formState.initial_values && formState.initial_values[fieldData.name]) ? formState.initial_values[fieldData.name] : '');
 
     const getErrorMessage = useCallback(() => {
         if (formState.form_errors && fieldData.name && formState.form_errors[fieldData.name] &&

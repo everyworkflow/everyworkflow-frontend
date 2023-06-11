@@ -27,18 +27,20 @@ const HeaderComponent = () => {
         <>
             <div
                 ref={headerRef}
-                className="app-header-panel" style={{
-                    backgroundColor: token.colorBgBase,
-                    boxShadow: token.boxShadow,
+                className="app-header-panel"
+                style={{
+                    backgroundColor: token.colorBgContainer,
+                    boxShadow: token.boxShadowTertiary,
                     position: 'sticky',
                     top: 0,
                     zIndex: 5,
                 }}>
-                <Layout.Header style={{
-                    backgroundColor: token.colorBgBase,
-                    paddingLeft: token.paddingContentHorizontalLG,
-                    paddingRight: token.paddingContentHorizontalLG,
-                }}>
+                <Layout.Header
+                    style={{
+                        backgroundColor: token.colorBgContainer,
+                        paddingLeft: token.paddingContentHorizontalLG,
+                        paddingRight: token.paddingContentHorizontalLG,
+                    }}>
                     <Row gutter={16} align="middle" style={{ height: 'inherit' }}>
                         <Col span={12}>
                             <Space>

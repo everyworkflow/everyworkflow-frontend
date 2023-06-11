@@ -43,7 +43,7 @@ const TimeRangePickerField = ({ fieldData, onChange, children }: TimeRangePicker
                 name={fieldData.name}
                 label={fieldData.label}
                 initialValue={(() => {
-                    if (fieldData.name && formState.initial_values[fieldData.name]) {
+                    if (fieldData.name && formState.initial_values && formState.initial_values[fieldData.name]) {
                         if (formState.initial_values[fieldData.name].length === 2) {
                             return [
                                 moment(formState.initial_values[fieldData.name][0], 'HH:mm:ss'),

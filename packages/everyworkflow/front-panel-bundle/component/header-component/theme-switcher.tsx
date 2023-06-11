@@ -2,24 +2,21 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import LocalStorage from '@everyworkflow/panel-bundle/service/local-storage';
+import PanelContext from '@everyworkflow/panel-bundle/context/panel-context';
+import { ACTION_SET_THEME } from '@everyworkflow/panel-bundle/reducer/panel-reducer';
 
 const ThemeSwitcher = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    useEffect(() => {
-        const persistedTheme: string | undefined = LocalStorage.get('ew_theme', false);
-        if (persistedTheme === 'dark') {
-            setIsDarkMode(true);
-        }
-    }, [])
+    const { state: panelState, dispatch: panelDispatch } = useContext(PanelContext);
 
     const toggleDarkMode = () => {
-        const currentTheme = LocalStorage.get('ew_theme');
-        const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
-        setIsDarkMode(nextTheme === 'light');
-        LocalStorage.set('ew_theme', nextTheme, false);
+        const nextTheme = panelState.theme === 'light' ? 'dark' : 'light';
+        LocalStorage.set('ew_theme', nextTheme);
+        panelDispatch({
+            type: ACTION_SET_THEME,
+            payload: nextTheme,
+        });
     }
 
     const renderSun = (
@@ -34,7 +31,7 @@ const ThemeSwitcher = () => {
     )
 
     return (
-        <div onClick={toggleDarkMode}>{isDarkMode ? renderSun : renderMoon}</div>
+        <div onClick={toggleDarkMode}>{panelState.theme === 'light' ? renderMoon : renderSun}</div>
     );
 }
 
