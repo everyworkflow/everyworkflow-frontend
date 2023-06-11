@@ -108,12 +108,20 @@ const AccountDropdown = () => {
             //         }}>Language: EN</a>
             //     ),
             // },
+            // {
+            //     key: 'theme-switcher',
+            //     icon: <FormatPainterOutlined />,
+            //     label: <ThemeSwitcher />,
+            // },
             {
-                key: 'theme-switcher',
+                key: 'customize-theme',
                 icon: <FormatPainterOutlined />,
-                label: <ThemeSwitcher />,
+                label: (
+                    <NavLink to={'/customize-theme'}>
+                        My Theme
+                    </NavLink>
+                ),
             },
-
             {
                 type: 'divider',
             },

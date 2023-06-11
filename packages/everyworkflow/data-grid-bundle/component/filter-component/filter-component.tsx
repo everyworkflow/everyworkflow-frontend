@@ -10,7 +10,7 @@ import DataGridContext, { PANEL_ACTIVE_FILTERS } from '@everyworkflow/data-grid-
 import { ACTION_SET_ACTIVE_PANEL } from '@everyworkflow/data-grid-bundle/reducer/data-grid-reducer';
 import DataFormInterface from '@everyworkflow/data-form-bundle/model/data-form-interface';
 import { FORM_TYPE_INLINE } from "@everyworkflow/data-form-bundle/component/data-form-component/data-form-component";
-import '@everyworkflow/data-grid-bundle/component/filter-component/filter-style.less';
+import '@everyworkflow/data-grid-bundle/component/filter-component/filter-component.css';
 
 const FilterComponent = () => {
     const { state: gridState, dispatch: gridDispatch } = useContext(DataGridContext);
@@ -160,6 +160,7 @@ const FilterComponent = () => {
                     className={'data-grid-filters'}
                     form={form}
                     formType={FORM_TYPE_INLINE}
+                    labelCol={{ span: 8 }}
                     initialValues={getInitialValues()}
                     formData={getFilterFormData()}
                     onSubmit={onColumnFormSubmit}

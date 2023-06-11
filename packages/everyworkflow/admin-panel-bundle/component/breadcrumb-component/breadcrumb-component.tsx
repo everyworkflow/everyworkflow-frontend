@@ -13,7 +13,7 @@ const BreadcrumbComponent = () => {
     const { state: adminPanelState } = useContext(AdminPanelContext);
     const location = useLocation();
 
-    const getArrayItems = useCallback(() => {
+    const getArrayItems = useCallback((): Array<any> => {
         const findHierarchical = (
             items: Array<SidebarItemInterface>,
             pathName: string
@@ -40,22 +40,25 @@ const BreadcrumbComponent = () => {
             });
             return hierarchicalData;
         };
+        let items: Array<any> = [];
         if (adminPanelState.sidebar_data) {
-            return findHierarchical(adminPanelState.sidebar_data, location.pathname);
+            const result: Array<any> = findHierarchical(adminPanelState.sidebar_data, location.pathname);
+            result.forEach((item: SidebarItemInterface) => {
+                items.push({
+                    key: item.item_path,
+                    title: (
+                        <>
+                            {item.item_path ? <NavLink to={item.item_path}>{item.item_label}</NavLink> : item.item_label}
+                        </>
+                    )
+                });
+            });
         }
-        return [];
+        return items;
     }, [location, adminPanelState]);
 
     return (
-        <Breadcrumb style={{ margin: '16px 24px' }}>
-            {getArrayItems().map((item, index: number) => (
-                <Breadcrumb.Item key={index}>{
-                    item.item_path ? (
-                        <NavLink to={item.item_path}>{item.item_label}</NavLink>
-                    ) : item.item_label
-                }</Breadcrumb.Item>
-            ))}
-        </Breadcrumb>
+        <Breadcrumb style={{ margin: '16px 24px' }} items={getArrayItems()} />
     );
 };
 

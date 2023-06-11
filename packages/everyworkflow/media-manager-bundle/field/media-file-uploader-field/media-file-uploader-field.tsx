@@ -21,7 +21,7 @@ interface MediaFileUploaderFieldProps extends DynamicFieldPropsInterface {
 const MediaFileUploaderField = ({ fieldData, children }: MediaFileUploaderFieldProps) => {
     const { state: formState } = useContext(FormContext);
     const [selectedMediaPath, setSelectedMediaPath] = useState<string | undefined>(((): string | undefined => {
-        if (fieldData.name && formState.initial_values[fieldData.name]) {
+        if (fieldData.name && formState.initial_values && formState.initial_values[fieldData.name]) {
             if (formState.initial_values[fieldData.name] === 'string') {
                 return formState.initial_values[fieldData.name];
             }
@@ -107,7 +107,7 @@ const MediaFileUploaderField = ({ fieldData, children }: MediaFileUploaderFieldP
                 } : undefined}
                 name={fieldData.name}
                 label={fieldData.label}
-                initialValue={(fieldData.name && formState.initial_values[fieldData.name]) ? formState.initial_values[fieldData.name] : undefined}
+                initialValue={(fieldData.name && formState.initial_values && formState.initial_values[fieldData.name]) ? formState.initial_values[fieldData.name] : undefined}
                 rules={[{ required: fieldData.is_required }]}>
                 <>
                     {selectedMediaPath && (

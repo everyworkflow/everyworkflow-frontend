@@ -43,7 +43,7 @@ const DateRangePickerField = ({ fieldData, onChange, children }: DateRangePicker
                 name={fieldData.name}
                 label={fieldData.label}
                 initialValue={(() => {
-                    if (fieldData.name && formState.initial_values[fieldData.name]) {
+                    if (fieldData.name && formState.initial_values && formState.initial_values[fieldData.name]) {
                         if (formState.initial_values[fieldData.name].length === 2) {
                             return [
                                 moment(formState.initial_values[fieldData.name][0]),

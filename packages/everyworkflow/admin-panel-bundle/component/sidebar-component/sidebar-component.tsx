@@ -3,16 +3,16 @@
  */
 
 import { useContext, useState, useEffect, useCallback } from 'react';
-import { theme, Menu, Button } from 'antd';
+import { Menu, Button } from 'antd';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Scrollbars } from 'react-custom-scrollbars';
 import HtmlRawComponent from "@everyworkflow/panel-bundle/component/html-raw-component";
 import AdminPanelContext from "@everyworkflow/admin-panel-bundle/context/admin-panel-context";
 import { ACTION_HIDE_MOBILE_APP_SIDEBAR } from '@everyworkflow/admin-panel-bundle/reducer/admin-panel-reducer';
 import LocalStorage from '@everyworkflow/panel-bundle/service/local-storage';
+import '@everyworkflow/admin-panel-bundle/component/sidebar-component/sidebar-style.css';
 
 const SidebarComponent = () => {
-    const { token } = theme.useToken();
     const { state: adminPanelState, dispatch: adminPanelDispatch } = useContext(AdminPanelContext);
     const [sidebarData, setSidebarData] = useState<Array<any>>([]);
     const location = useLocation();
@@ -95,9 +95,7 @@ const SidebarComponent = () => {
                     label: item.item_label,
                     key: item.name,
                     icon: item?.item_icon ? (
-                        <HtmlRawComponent
-                            content={item.item_icon}
-                            style={{ display: 'flex' }} />
+                        <HtmlRawComponent content={item.item_icon} />
                     ) : undefined,
                     children: []
                 };
@@ -114,9 +112,7 @@ const SidebarComponent = () => {
                 key: item.name,
                 icon: item?.item_icon ? (
                     <NavLink to={item.item_path}>
-                        <HtmlRawComponent
-                            content={item.item_icon}
-                            style={{ display: 'flex' }} />
+                        <HtmlRawComponent content={item.item_icon} />
                     </NavLink>
                 ) : undefined,
             };
@@ -132,28 +128,20 @@ const SidebarComponent = () => {
 
     return (
         <>
-            <div>
+            <div className="app-header-brand">
                 <NavLink to={'/dashboard'}>
-                    <Button type="text" block={true} style={{
-                        padding: token.padding,
-                        height: 'auto',
-                        fontSize: token.fontSizeHeading4,
-                        borderRadius: 0,
-                    }}>
+                    <Button type="text" block={true}>
                         <span className="long-label"><strong>EW</strong> Admin Panel</span>
                         <span className="small-label"><strong>EW</strong></span>
                     </Button>
                 </NavLink>
             </div>
-            <div>
+            <div className="app-main-sidebar">
                 <Scrollbars autoHide={true} style={{
                     height: 'calc(100vh - 65px - 48px)',
                 }}>
                     {sidebarData && Array.isArray(sidebarData) && sidebarData.length > 0 && (
                         <Menu
-                            style={{
-                                borderRight: 'none',
-                            }}
                             mode="inline"
                             items={getSidebarItems()}
                             selectedKeys={getSelectedKeys()}

@@ -3,7 +3,7 @@
  */
 
 import { useState } from 'react';
-import { Tree, TreeDataNode } from 'antd';
+import { theme, Tree, TreeDataNode } from 'antd';
 import { useNavigate } from "react-router-dom";
 import Remote from "@everyworkflow/panel-bundle/service/remote";
 import AlertAction, { ALERT_TYPE_ERROR } from "@everyworkflow/panel-bundle/action/alert-action";
@@ -11,6 +11,7 @@ import AlertAction, { ALERT_TYPE_ERROR } from "@everyworkflow/panel-bundle/actio
 const initTreeData: TreeDataNode[] = [{ title: 'Default - Create new scope', key: 'default' }];
 
 const ScopeSidebar = () => {
+    const { token } = theme.useToken();
     const [treeData, setTreeData] = useState<Array<any>>(initTreeData);
     const navigate = useNavigate();
 
@@ -110,7 +111,10 @@ const ScopeSidebar = () => {
     }
 
     return (
-        <div className="tree-sidebar">
+        <div className="tree-sidebar"
+            style={{
+                padding: token.padding,
+            }}>
             <Tree
                 onClick={onClick}
                 defaultExpandAll={true}

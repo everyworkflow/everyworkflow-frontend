@@ -46,25 +46,29 @@ const ProductListReducer = (state: ProductListStateInterface, action: any) => {
             };
         }
         case ACTION_SET_PRODUCT_FILTER: {
-            const { key, value } = action.payload;
+            // const { key, value } = action.payload;
 
-            let finalValue: any;
-            if (key === "brand") {
-                finalValue = state.filters.brand.includes(value)
-                    ? state.filters.brand.filter((item: any) => item !== value)
-                    : [...state.filters.brand, value];
-            } else {
-                finalValue = value;
-            }
-            const filter = {
+            // let finalValue: any;
+            // if (key === "brand") {
+            //     finalValue = state.filters.brand.includes(value)
+            //         ? state.filters.brand.filter((item: any) => item !== value)
+            //         : [...state.filters.brand, value];
+            // } else {
+            //     finalValue = value;
+            // }
+            // const filter = {
+            //     ...state,
+            //     filters: { ...state.filters, [key]: finalValue },
+            // };
+            // const URI = `${BASE_URI}/product/filter?${getRouteParams(
+            //     filter.filters
+            // )};`;
+
+            console.log('dispatch -->', action);
+            return {
                 ...state,
-                filters: { ...state.filters, [key]: finalValue },
+                filters: action.payload,
             };
-            const URI = `${BASE_URI}/product/filter?${getRouteParams(
-                filter.filters
-            )};`;
-
-            return filter;
         }
         default: {
             return state;

@@ -11,15 +11,17 @@ const ProductGalleryComponent = () => {
 
     return (
         <Image.PreviewGroup>
-            <Space direction="vertical">
+            <Space direction="vertical" style={{ width: '100%' }}>
                 {detailState.remote_data?.item?.gallery?.map((item: any, index: number) => (
                     <Image
                         key={index}
                         src={item.path_name}
                         alt={item.title}
                         className="app-product-main-gallery-image"
+                        style={{ width: '100%', cursor: 'zoom-in' }}
+                        wrapperStyle={{ width: '100%' }}
                         preview={{
-                            maskClassName: "app-product-main-gallery-image-mask",
+                            mask: undefined,
                         }}
                     />
                 ))}

@@ -29,14 +29,14 @@ const FieldRenderComponent = ({ fields = [] }: RenderFieldProps) => {
     useEffect(() => {
         fields.forEach((field) => {
             if (field.is_actionable && field.name) {
-                fieldActionHandler(field, formState.initial_values[field.name]);
+                fieldActionHandler(field, formState.initial_values[field.name], 'init');
             }
         });
     }, [fields]);
 
     const fieldActionHandler = (field: BaseFieldInterface, value: any, actionType = 'init') => {
         if (actionType === 'init' && value === undefined && field.hasOwnProperty('default_value')) {
-            value = field.default_value;
+            value = field?.default_value;
         }
         if (typeof value === 'boolean') {
             value = Number(value);
@@ -100,7 +100,7 @@ const FieldRenderComponent = ({ fields = [] }: RenderFieldProps) => {
                     break;
                 }
                 case 'update_form': {
-                    if (field.name && (!Object.keys(formState.form_update_data).includes(field.name) || actionType === 'change')) {
+                    if (field.name && (actionType === 'change' || actionType === 'init')) {
                         const formUpdateData: any = formState.form_update_data ?? {};
                         if (formUpdateData.hasOwnProperty(field.name) && formUpdateData[field.name] === value) {
                             break;

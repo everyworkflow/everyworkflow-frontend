@@ -6,20 +6,21 @@ import FormStateInterface from "@everyworkflow/data-form-bundle/model/form-state
 
 export const formState: FormStateInterface = {
     form_type: undefined,
-
     form_data: undefined,
+
     form_id: undefined,
-    mode: '',
+    form: undefined,
+    mode: undefined,
 
-    form_errors: {},
-    initial_values: {},
+    initial_values: undefined,
+    form_errors: undefined,
 
-    form_section_maps: {},
-    form_field_maps: {},
+    form_section_maps: undefined,
+    form_field_maps: undefined,
 
-    hidden_field_names: [],
-    invisible_field_names: [],
-    disable_field_names: [],
+    hidden_field_names: undefined,
+    invisible_field_names: undefined,
+    disable_field_names: undefined,
 
-    form_update_data: {},
+    form_update_data: undefined,
 };

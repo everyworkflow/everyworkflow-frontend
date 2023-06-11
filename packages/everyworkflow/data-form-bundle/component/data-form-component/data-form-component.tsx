@@ -2,14 +2,14 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import { Suspense, useCallback, useEffect, useReducer } from "react";
+import { Suspense, useCallback, useReducer } from "react";
 import { Form, FormInstance, ColProps } from 'antd';
 import { FormLabelAlign } from "antd/lib/form/interface";
 import moment from "moment";
 import DataFormInterface from "@everyworkflow/data-form-bundle/model/data-form-interface";
 import LoadingIndicatorComponent from "@everyworkflow/panel-bundle/component/loading-indicator-component";
 import FormContext from "@everyworkflow/data-form-bundle/context/form-context";
-import FormReducer, { ACTION_SET_STATE_DATA } from "@everyworkflow/data-form-bundle/reducer/form-reducer";
+import FormReducer from "@everyworkflow/data-form-bundle/reducer/form-reducer";
 import { formState } from "@everyworkflow/data-form-bundle/state/form-state";
 import DataFormContentComponent from '@everyworkflow/data-form-bundle/component/data-form-content-component';
 
@@ -85,16 +85,6 @@ const DataFormComponent = ({
         },
     };
 
-    useEffect(() => {
-        dispatch({
-            type: ACTION_SET_STATE_DATA,
-            payload: {
-                form_data: formData ?? {},
-                initial_values: initialValues ?? {},
-            }
-        });
-    }, [formData, initialValues]);
-
     const getFormId = useCallback(() => {
         if (formId === undefined) {
             return "form-" + Math.random();
@@ -120,7 +110,6 @@ const DataFormComponent = ({
                     values[key] = values[key].toISOString();
                 }
             });
-            console.log("onFinish --> values", values);
             onSubmit(values);
         }
     };

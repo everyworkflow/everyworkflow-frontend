@@ -13,18 +13,19 @@ interface ProductSelectComponentProps {
 
 const ProductSelectComponent = ({ label, defaultValue, options, onChange }: ProductSelectComponentProps) => {
     return (
-        <div className="ant-form-item">
-            <div className="ant-form-item-label">
-                <label>{label}</label>
-            </div>
-            <div className="ant-form-item-control">
-                <Select
-                    defaultValue={defaultValue}
-                    style={{ width: 120 }}
-                    onChange={onChange}
-                    options={options} />
-            </div>
+      <div style={{ marginTop: 20 }}>
+        <div>
+          <label>{label}</label>
         </div>
+        <div style={{ marginTop: 5 }}>
+          <Select
+            defaultValue={defaultValue}
+            style={{ width: 120 }}
+            onChange={onChange}
+            options={options}
+          />
+        </div>
+      </div>
     );
 }
 

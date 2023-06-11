@@ -2,6 +2,6 @@
  * @copyright EveryWorkflow. All rights reserved.
  */
 
-import CartCheckoutComponent from "./cart-checkout-component";
+import CartComponent from "./cart-component";
 
-export default CartCheckoutComponent;
+export default CartComponent;

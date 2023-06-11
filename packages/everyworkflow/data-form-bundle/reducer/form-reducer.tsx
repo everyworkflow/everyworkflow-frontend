@@ -49,7 +49,7 @@ const FormReducer = (state: FormStateInterface, action: any) => {
             };
         }
         case ACTION_ADD_HIDDEN_FIELD_NAMES: {
-            let newItems = state.hidden_field_names;
+            let newItems: Array<string> = state.hidden_field_names ?? [];
             newItems.push(action.payload);
             return {
                 ...state,
@@ -57,7 +57,7 @@ const FormReducer = (state: FormStateInterface, action: any) => {
             };
         }
         case ACTION_REMOVE_HIDDEN_FIELD_NAMES: {
-            let newItems = state.hidden_field_names;
+            let newItems: Array<string> = state.hidden_field_names ?? [];
             newItems = newItems.filter((item: string) => item !== action.payload);
             return {
                 ...state,
@@ -71,7 +71,7 @@ const FormReducer = (state: FormStateInterface, action: any) => {
             };
         }
         case ACTION_ADD_INVISIBLE_FIELD_NAMES: {
-            let newItems = state.invisible_field_names;
+            let newItems: Array<string> = state.invisible_field_names ?? [];
             newItems.push(action.payload);
             return {
                 ...state,
@@ -79,7 +79,7 @@ const FormReducer = (state: FormStateInterface, action: any) => {
             };
         }
         case ACTION_REMOVE_INVISIBLE_FIELD_NAMES: {
-            let newItems = state.invisible_field_names;
+            let newItems: Array<string> = state.invisible_field_names ?? [];
             newItems = newItems.filter((item: string) => item !== action.payload);
             return {
                 ...state,
@@ -93,7 +93,7 @@ const FormReducer = (state: FormStateInterface, action: any) => {
             };
         }
         case ACTION_ADD_DISABLE_FIELD_NAMES: {
-            let newItems = state.disable_field_names;
+            let newItems: Array<string> = state.disable_field_names ?? [];
             newItems.push(action.payload);
             return {
                 ...state,
@@ -101,7 +101,7 @@ const FormReducer = (state: FormStateInterface, action: any) => {
             };
         }
         case ACTION_REMOVE_DISABLE_FIELD_NAMES: {
-            let newItems = state.disable_field_names;
+            let newItems: Array<string> = state.disable_field_names ?? [];
             newItems = newItems.filter((item: string) => item !== action.payload);
             return {
                 ...state,

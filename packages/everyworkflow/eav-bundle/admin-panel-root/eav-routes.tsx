@@ -8,36 +8,44 @@ const EntityListPage = lazy(() => import("@everyworkflow/eav-bundle/admin/page/e
 const EntityFormPage = lazy(() => import("@everyworkflow/eav-bundle/admin/page/entity/entity-form-page"));
 const AttributeListPage = lazy(() => import("@everyworkflow/eav-bundle/admin/page/attribute/attribute-list-page"));
 const AttributeFormPage = lazy(() => import("@everyworkflow/eav-bundle/admin/page/attribute/attribute-form-page"));
+const AttributeGroupListPage = lazy(() => import("@everyworkflow/eav-bundle/admin/page/attribute-group/attribute-group-list-page"));
+const AttributeGroupFormPage = lazy(() => import("@everyworkflow/eav-bundle/admin/page/attribute-group/attribute-group-form-page"));
 
 export const EavRoutes = [
     {
         path: '/system/entity',
-        exact: true,
         component: EntityListPage
     },
     {
         path: '/system/entity/create',
-        exact: true,
         component: EntityFormPage
     },
     {
         path: '/system/entity/:code/edit',
-        exact: true,
         component: EntityFormPage
     },
     {
         path: '/system/attribute',
-        exact: true,
         component: AttributeListPage
     },
     {
         path: '/system/attribute/create',
-        exact: true,
         component: AttributeFormPage
     },
     {
         path: '/system/attribute/:code/edit',
-        exact: true,
         component: AttributeFormPage
+    },
+    {
+        path: '/system/attribute-group',
+        component: AttributeGroupListPage
+    },
+    {
+        path: '/system/attribute-group/create',
+        component: AttributeGroupFormPage
+    },
+    {
+        path: '/system/attribute-group/:code/edit',
+        component: AttributeGroupFormPage
     }
 ];

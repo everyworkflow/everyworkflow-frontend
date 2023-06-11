@@ -3,17 +3,15 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
-import { theme, Menu } from 'antd';
-import { NavLink } from 'react-router-dom';
+import { Menu } from 'antd';
+import { NavLink, useParams } from 'react-router-dom';
 import Remote from "@everyworkflow/panel-bundle/service/remote";
-import { Scrollbars } from 'react-custom-scrollbars';
 import AlertAction, { ALERT_TYPE_ERROR } from "@everyworkflow/panel-bundle/action/alert-action";
 import HtmlRawComponent from '@everyworkflow/panel-bundle/component/html-raw-component';
 
 const SettingSidebar = () => {
-    const { token } = theme.useToken();
     const [menuData, setmenuData] = useState<Array<any>>();
-    const code = 'general-setting';
+    const { code }: any = useParams();
 
     useEffect(() => {
         const handleResponse = (response: any) => {
@@ -78,7 +76,7 @@ const SettingSidebar = () => {
     }, [code]);
 
     const getDefaultOpenKeys = useCallback(() => {
-        const name = code.toString().replaceAll('-', '.');
+        const name = code?.toString().replaceAll('-', '.');
         if (!menuData) {
             return [];
         }
@@ -141,28 +139,20 @@ const SettingSidebar = () => {
     }, [menuData]);
 
     return (
-        <div className="sidebar-panel" style={{ width: 256 }}>
-            <div className="sidebar-wrapper">
-                <Scrollbars
-                    autoHide={true}
+        <>
+            {menuData && Array.isArray(menuData) && (
+                <Menu
+                    className="app-menu-active-left-side"
                     style={{
-                        width: 256,
-                        height: 'calc(100vh - 64px)',
-                        backgroundColor: token.colorBgBase,
-                        position: 'fixed', top: 64
-                    }}>
-                    {menuData && Array.isArray(menuData) && (
-                        <Menu
-                            className="app-menu-active-left-side"
-                            mode="inline"
-                            selectedKeys={getSelectedKeys()}
-                            defaultOpenKeys={getDefaultOpenKeys()}
-                            items={getMenuItems()}
-                        />
-                    )}
-                </Scrollbars>
-            </div>
-        </div>
+                        borderRight: 'none',
+                    }}
+                    mode="inline"
+                    selectedKeys={getSelectedKeys()}
+                    defaultOpenKeys={getDefaultOpenKeys()}
+                    items={getMenuItems()}
+                />
+            )}
+        </>
     );
 };
 

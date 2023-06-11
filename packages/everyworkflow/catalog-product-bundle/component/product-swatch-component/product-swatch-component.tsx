@@ -137,33 +137,33 @@ const ProductSwatchComponent = ({ productSwatch, defaultValue, onChange }: Produ
     }
 
     return (
-        <>
-            <div className="ant-form-item app-product-form-item">
-                <div className="ant-form-item-label">
-                    <label>{productSwatch?.label}</label>
-                </div>
-                <div className="ant-form-item-control">
-                    <Space>
-                        {productSwatch?.items?.map((item, index) => {
-                            switch (productSwatch.type) {
-                                case 'hex': {
-                                    return renderHex(item, index);
-                                }
-                                case 'text': {
-                                    return renderText(item, index);
-                                }
-                                case 'image': {
-                                    return renderImage(item, index);
-                                }
-                                default: {
-                                    return null;
-                                }
-                            }
-                        })}
-                    </Space>
-                </div>
-            </div>
-        </>
+      <>
+        <div style={{ marginTop: 20 }}>
+          <div className="ant-form-item-label">
+            <label>{productSwatch?.label}</label>
+          </div>
+          <div className="ant-form-item-control" style={{ marginTop: 5 }}>
+            <Space>
+              {productSwatch?.items?.map((item, index) => {
+                switch (productSwatch.type) {
+                  case "hex": {
+                    return renderHex(item, index);
+                  }
+                  case "text": {
+                    return renderText(item, index);
+                  }
+                  case "image": {
+                    return renderImage(item, index);
+                  }
+                  default: {
+                    return null;
+                  }
+                }
+              })}
+            </Space>
+          </div>
+        </div>
+      </>
     );
 }
 

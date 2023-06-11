@@ -34,16 +34,28 @@ const DataFormContentComponent = () => {
         );
     }, [formState.form_data]);
 
+    const getAnchorData = useCallback(() => {
+        let items: Array<any> = [];
+        getSortedSectionData(formState.form_data?.sections ?? []).map((item: any, index: number) => {
+            items.push({
+                key: index.toString(),
+                href: '#form-section-' + item.code,
+                title: item.title,
+            });
+        });
+        return items;
+    }, [formState.form_data?.sections]);
+
     if (formState.form_data?.is_side_form_anchor_enable) {
         if (formState.form_data?.side_form_anchor_position === 'right') {
             return (
                 <Row>
                     <Col md={{ order: 2, span: 4 }}>
-                        <Anchor affix={!panelState.is_mobile} offsetTop={55 + 16} style={{ marginBottom: 24 }}>
-                            {getSortedSectionData(formState.form_data?.sections ?? []).map((item: any, index: number) => (
-                                <Anchor.Link key={index.toString()} href={'#form-section-' + item.code} title={item.title} />
-                            ))}
-                        </Anchor>
+                        <Anchor
+                            affix={!panelState.is_mobile}
+                            offsetTop={55 + 16}
+                            style={{ marginBottom: 24 }}
+                            items={getAnchorData()} />
                     </Col>
                     <Col md={{ order: 1, span: 20 }}>
                         {renderContent()}
@@ -54,11 +66,11 @@ const DataFormContentComponent = () => {
             return (
                 <Row>
                     <Col md={{ span: 4 }} style={{ paddingLeft: 16 }}>
-                        <Anchor affix={!panelState.is_mobile} offsetTop={55 + 16} style={{ marginBottom: 24 }}>
-                            {getSortedSectionData(formState.form_data?.sections ?? []).map((item: any, index: number) => (
-                                <Anchor.Link key={index.toString()} href={'#form-section-' + item.code} title={item.title} />
-                            ))}
-                        </Anchor>
+                        <Anchor
+                            affix={!panelState.is_mobile}
+                            offsetTop={55 + 16}
+                            style={{ marginBottom: 24 }}
+                            items={getAnchorData()} />
                     </Col>
                     <Col md={{ span: 20 }}>
                         {renderContent()}

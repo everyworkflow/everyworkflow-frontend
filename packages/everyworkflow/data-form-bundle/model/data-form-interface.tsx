@@ -12,6 +12,7 @@ interface DataFormInterface {
     side_form_anchor_position?: string;
     fields?: Array<BaseFieldInterface>;
     sections?: Array<BaseSectionInterface>;
+    additional_data?: any;
 }
 
 export default DataFormInterface;

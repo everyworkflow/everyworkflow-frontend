@@ -39,7 +39,7 @@ const MediaImageGallerySelectorField = ({ fieldData, children }: MediaImageGalle
     const [mediaItemConfigPath, setMediaItemConfigPath] = useState<string | undefined>(undefined);
     const [previewItem, setPreviewItem] = useState<PreviewImageInterface | undefined>(undefined);
     const [selectedMediaItems, setSelectedMediaItems] = useState<SelectedMediaItemInterface[]>(((): Array<SelectedMediaItemInterface> => {
-        if (fieldData.name && formState.initial_values[fieldData.name]) {
+        if (fieldData.name && formState.initial_values && formState.initial_values[fieldData.name]) {
             if (formState.initial_values[fieldData.name] === 'string') {
                 return formState.initial_values[fieldData.name];
             } else {
@@ -116,7 +116,7 @@ const MediaImageGallerySelectorField = ({ fieldData, children }: MediaImageGalle
                 wrapperCol={{ span: 20 }}
                 name={fieldData.name}
                 label={fieldData.label}
-                initialValue={(fieldData.name && formState.initial_values[fieldData.name]) ? formState.initial_values[fieldData.name] : undefined}
+                initialValue={(fieldData.name && formState.initial_values && formState.initial_values[fieldData.name]) ? formState.initial_values[fieldData.name] : undefined}
                 rules={[{ required: fieldData.is_required }]}>
                 <>
                     {getSortableList()?.length > 0 && (
@@ -128,17 +128,26 @@ const MediaImageGallerySelectorField = ({ fieldData, children }: MediaImageGalle
                             {getSortableList().map((mediaItem, mediaItemIndex) => (
                                 <Col key={mediaItem.id} className="media-gallery-card-col" style={{ marginBottom: 16 }}>
                                     <Tooltip title={mediaItem.title} placement="bottom">
-                                        <div className="media-gallery-card-wrapper">
+                                        <div className="media-gallery-card-wrapper" style={{ display: 'relative' }}>
                                             <Button
                                                 style={{ height: 'auto', padding: 0 }}>
                                                 <MediaGridItemContent
                                                     title={mediaItem.title}
                                                     pathName={mediaItem.path_name}
-                                                    thumbnailPath={mediaItem.thumbnail_path ? mediaItem.thumbnail_path: mediaItem.path_name}
+                                                    thumbnailPath={mediaItem.thumbnail_path ? mediaItem.thumbnail_path : mediaItem.path_name}
                                                     imageSize={216}
                                                 />
                                             </Button>
-                                            <Space className="media-gallery-card-hover">
+                                            <Space
+                                                className="media-gallery-card-hover"
+                                                style={{
+                                                    justifyContent: 'center',
+                                                    position: 'absolute',
+                                                    height: '100%',
+                                                    width: '100%',
+                                                    left: 0,
+                                                    top: 0,
+                                                }}>
                                                 <Button
                                                     type="default"
                                                     shape="circle"
@@ -159,7 +168,7 @@ const MediaImageGallerySelectorField = ({ fieldData, children }: MediaImageGalle
                                                     <SettingOutlined />
                                                 </Button>
                                                 <Button
-                                                    type="ghost"
+                                                    type="default"
                                                     shape="circle"
                                                     danger={true}
                                                     onClick={() => {

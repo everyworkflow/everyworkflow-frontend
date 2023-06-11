@@ -19,11 +19,11 @@ interface FormStateInterface {
     form_section_maps?: any;
     form_field_maps?: any;
 
-    hidden_field_names: Array<string>;
-    invisible_field_names: Array<string>;
-    disable_field_names: Array<string>;
+    hidden_field_names?: Array<string>;
+    invisible_field_names?: Array<string>;
+    disable_field_names?: Array<string>;
 
-    form_update_data: any;
+    form_update_data?: any;
 }
 
 export default FormStateInterface;

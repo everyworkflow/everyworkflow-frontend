@@ -8,7 +8,7 @@ import '@everyworkflow/admin-panel-bundle/style.css';
 
 const AdminPanel = () => {
     return (
-        <RootPanelComponent>
+        <RootPanelComponent canOverwriteThemeTokenFromLocationStorage={true}>
             <AdminPanelRoot />
         </RootPanelComponent>
     );

@@ -3,10 +3,16 @@
  */
 
 interface ProductListStateInterface {
+    data_collection?: any;
+    child_category?: any;
+    filter_attributes?: Array<any>;
+    pagination: { page: number, per_page: number };
+    filter?: any;
+
     products: any;
     menu: any;
     isLoading: boolean;
-    filters: { price: any; brand: any; size: string; color: string };
+    filters?: any;
 }
 
 export default ProductListStateInterface;

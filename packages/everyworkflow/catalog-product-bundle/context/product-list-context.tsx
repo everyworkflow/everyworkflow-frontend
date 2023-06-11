@@ -13,8 +13,8 @@ export interface ProductListContextInterface {
 }
 
 const ProductListContext = createContext<ProductListContextInterface>({
-    state: productListState,
-    dispatch: () => null,
+  state: productListState,
+  dispatch: () => {},
 });
 
 const useProductListContext = () => {

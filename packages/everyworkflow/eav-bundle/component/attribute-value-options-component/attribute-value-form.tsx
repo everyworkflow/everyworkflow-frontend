@@ -128,13 +128,15 @@ const AttributeValueForm = ({ optionIndex, initialValues, onSubmit }: AttributeV
                 initialValues={initialValues}
                 onSubmit={onFormSubmit}
             />
-            <Button
-                type="primary"
-                onClick={() => {
-                    form?.submit();
-                }}>
-                Save
-            </Button>
+            <div style={{ textAlign: 'center' }}>
+                <Button
+                    type="primary"
+                    onClick={() => {
+                        form?.submit();
+                    }}>
+                    Save changes
+                </Button>
+            </div>
         </>
     );
 }

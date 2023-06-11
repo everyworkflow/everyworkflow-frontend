@@ -7,5 +7,8 @@ import PanelStateInterface from "@everyworkflow/panel-bundle/model/panel-state-i
 export const panelState: PanelStateInterface = {
     is_mobile: false,
     page_title: undefined,
-    auth: undefined
+    auth: undefined,
+    screens: undefined,
+    theme: 'light',
+    theme_token: undefined,
 };

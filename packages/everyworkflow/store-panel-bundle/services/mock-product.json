@@ -1,0 +1,133 @@
+{
+  "products": [
+    {
+      "_id": "1",
+      "sku": "1",
+      "name": "body Lotion",
+      "price": 90,
+      "url_key": "",
+      "gallery": [
+        {
+          "path_name": "/images/product-image-1.png"
+        }
+      ],
+      "category": "voluptas-ab-dolore",
+      "description": "Find the right tool for the job with our selection of high-quality tools and equipment. From hand tools to power tools, we have everything you need to get the job done quickly and efficiently. Our products are made with only the highest quality materials, ensuring that they will last for years to come. Whether you're a professional contractor or a DIY enthusiast, we have the tools you need to tackle any project."
+    },
+    {
+      "_id": "2",
+      "name": "Sugar - Icing",
+      "price": 590,
+      "quantity": 95,
+      "size": "s",
+      "url_key": "",
+      "category": "voluptas-ab-dolore",
+      "gallery": [{ "path_name": "/images/product-image-2.png" }],
+      "description": "Get ready to look your best with our collection of stylish and comfortable clothing. From casual wear to formal attire, we have everything you need to stay on-trend and comfortable all day long. Our clothing is made with only the highest quality materials, ensuring that you get the best fit and durability every time. Whether you're looking for a new outfit for work or a special occasion, we have you covered."
+    },
+    {
+      "_id": "3",
+      "name": "Nut - Pecan, Halves",
+      "quantity": 95,
+      "size": "s",
+      "price": 590,
+      "url_key": "",
+      "category": "voluptas-ab-dolore",
+      "gallery": [
+        {
+          "path_name": "/images/product-image-3.png"
+        }
+      ],
+      "description": "Tools"
+    },
+    {
+      "_id": "4",
+      "name": "Chocolate - Dark Callets",
+      "quantity": 95,
+      "size": "s",
+      "price": 590,
+      "url_key": "",
+      "category": "voluptas-ab-dolore",
+      "gallery": [
+        {
+          "path_name": "/images/product-image-4.png"
+        }
+      ],
+      "description": "Clothing"
+    },
+    {
+      "_id": "5",
+      "name": "Scallop - St. Jaques",
+      "quantity": 95,
+      "size": "s",
+      "price": 590,
+      "url_key": "",
+      "category": "voluptas-ab-dolore",
+      "gallery": [{ "path_name": "/images/product-image-5.png" }],
+      "description": "Industrial"
+    },
+    {
+      "_id": "6",
+      "name": "Bar Mix - Pina Colada, 355 Ml",
+      "quantity": 95,
+      "size": "s",
+      "price": 5900,
+      "url_key": "",
+      "category": "voluptas-ab-dolore",
+      "gallery": [
+        {
+          "path_name": "/images/product-image-6.png"
+        }
+      ],
+      "description": "Tools"
+    },
+    {
+      "_id": "7",
+      "name": "Water - Aquafina Vitamin",
+      "quantity": 95,
+      "size": "s",
+      "price": 590,
+      "url_key": "",
+      "category": "voluptas-ab-dolore",
+      "gallery": [
+        {
+          "path_name": "/images/product-image-2.png"
+        }
+      ],
+      "description": "Books"
+    },
+    {
+      "_id": "8",
+      "name": "Cut Wakame",
+      "quantity": 95,
+      "size": "s",
+      "price": 590,
+      "url_key": "",
+      "category": "voluptas-ab-dolore",
+      "gallery": [{ "path_name": "/images/product-image-1.png" }],
+      "description": "Kids"
+    },
+    {
+      "_id": "9",
+      "name": "Wine - Red, Pinot Noir, Chateau",
+      "quantity": 95,
+      "size": "s",
+      "price": 590,
+      "url_key": "",
+      "category": "voluptas-ab-dolore",
+      "gallery": [{ "path_name": "/images/product-image-5.png" }],
+      "description": "Tools"
+    },
+    {
+      "_id": "10",
+      "name": "Wild Boar - Tenderloin",
+      "quantity": 95,
+      "size": "s",
+      "price": 590,
+      "url_key": "",
+      "category": "voluptas-ab-dolore",
+      "gallery": [{ "path_name": "/images/product-image-2.png" }],
+      "description": "Kids"
+    }
+  ]
+}
